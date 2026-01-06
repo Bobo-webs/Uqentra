@@ -4753,15 +4753,6 @@ fieldset:disabled .btn {
     display: none
 }
 
-.navbar-light .navbar-brand {
-    opacity: 0.95;
-}
-
-.navbar-light .navbar-brand:focus,
-.navbar-light .navbar-brand:hover {
-    opacity: 0.95;
-}
-
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
 }
@@ -18406,14 +18397,10 @@ header.nav-fixed {
     padding: 0;
     font-size: 36px;
     font-weight: 700;
-    color: var(--nav-color);
+    color: var(--primary-color);
     margin: 0;
     font-family: 'DM Sans', sans-serif;
     text-transform: capitalize;
-}
-
-span.log {
-    color: var(--primary-color);
 }
 
 span.w3yellow {
@@ -18681,7 +18668,7 @@ form.search-box {
 }
 
 .nav-fixed .navbar-brand {
-    color: var(--nav-color);
+    color: var(--primary-color);
 }
 
 .nav-fixed .navbar-nav a.btn.search-btn {
@@ -20176,8 +20163,7 @@ div#small-dialog1 iframe {
     background-color: var(--bg-white);
 }
 
-/*--//Bokking-Form--*/
-/*--/w3-stats--*/
+
 /*--/stats--*/
 .w3l-stats-inner-inf {
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
@@ -20743,7 +20729,7 @@ p.para-counter {
     }
 }
 
-/*--//contact1--*/
+
 /*--/footer--*/
 .w3l-footer-16 {
     background: var(--footer-bg);
@@ -20976,6 +20962,14 @@ p.para-counter {
     }
 }
 
-/* //footer */
-/*--//w3l-footer-29-main--*/
-/*# sourceMappingURL=style-freedom.css.map */
+
+/*--/Custom--*/
+.navbar-brand {
+    text-transform: lowercase !important;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: 40px;
+    margin-right: -7px;
+}

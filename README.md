@@ -1,2 +1,2 @@
 # Uqentra
-A Trading Platform
+Uqentra - A trading platform

@@ -4486,6 +4486,7 @@ fieldset:disabled .btn {
     font-size: 1.25rem;
     text-decoration: none;
     white-space: nowrap;
+    color: var(--primary-color) !important;
 }
 
 .navbar-nav {
@@ -17872,6 +17873,7 @@ fieldset:disabled .btn {
     --card-bg: #888c96;
     --footer-bg: #000100;
     --box-shadow: 0 7px 10px rgb(6 6 10 / 10%);
+    --border-radius: 10px;
 }
 
 [data-theme="dark"] {
@@ -19272,7 +19274,7 @@ section.w3l-features-grids {
 /*--//features--*/
 /*--/w3l-join-main--*/
 .w3l-join-main {
-    background: url(../images/piggy.jfif) no-repeat center;
+    background: url(../images/worldtrade.png) no-repeat center;
     -ms-background-size: cover;
     background-size: cover;
     z-index: 0;
@@ -19653,10 +19655,8 @@ ul.w3l-right-book li span {
     position: relative;
     padding: 40px 40px;
     border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
     margin-top: 1em;
-    -webkit-box-shadow: 0 9px 25px -2px rgb(85 149 240 / 20%);
-    -moz-box-shadow: 0 9px 25px -2px rgba(85, 149, 240, .20);
-    box-shadow: 0 9px 25px -2px rgb(85 149 240 / 20%);
     background: var(--bg-color);
 }
 
@@ -19730,41 +19730,10 @@ ul.w3l-right-book li span {
     margin-right: 6px;
 }
 
-.w3-pricing-inner-inf:hover,
-.w3-pricing-inner-inf.active {
-    transform: scale(1.05);
-    transition: 0.3s;
-    background: var(--primary-color);
-}
-
-.w3-pricing-inner-inf:hover h4,
-.w3-pricing-inner-inf.active h4,
-.w3-pricing-inner-inf:hover p,
-.w3-pricing-inner-inf.active p,
-.w3-pricing-inner-inf:hover h3.currency,
-.w3-pricing-inner-inf.active h3.currency,
-.w3-pricing-inner-inf:hover .price h3,
-.w3-pricing-inner-inf.active .price h3,
-.w3-pricing-inner-inf:hover ul.list-style li,
-.w3-pricing-inner-inf.active ul.list-style li {
-    color: #fff;
-}
-
-.w3-pricing-inner-inf:hover ul.list-style li span,
-.w3-pricing-inner-inf.active ul.list-style li span {
-    color: var(--secondary-color);
-}
-
-.w3-pricing-inner-inf:hover .pricing-get-button .btn,
-.w3-pricing-inner-inf.active .pricing-get-button .btn {
-    color: #222;
-    background: var(--secondary-color);
-}
-
 /*--//w3l-Pricing--*/
 /*--/inner-banner--*/
 .breadcrumb-bg-about {
-    background: url(../images/bulb.jfif) no-repeat;
+    background: url(../images/uqentra-chart.avif) no-repeat;
     -ms-background-size: cover;
     background-size: cover;
     z-index: 0;
@@ -21060,5 +21029,224 @@ p.para-counter {
 @media (max-width: 767px) {
     .w3l-video-hero .title-hero-19 {
         font-size: 2.4rem;
+    }
+}
+
+
+/* ========= TRADABLE ======== */
+.tradable-dropdown {
+    position: relative;
+}
+
+/* ---------- Trigger Link ---------- */
+#marketsDropdown:hover,
+#marketsDropdown:focus,
+#marketsDropdown:active {
+    color: var(--primary-color) !important;
+    color: inherit;
+    outline: none;
+    box-shadow: none;
+}
+
+#marketsDropdown:focus,
+#marketsDropdown:active {
+    color: var(--primary-color) !important;
+}
+
+/* ---------- Arrow ---------- */
+.dropdown-arrow {
+    font-size: 12px;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* ---------- Dropdown Base ---------- */
+.markets-mega {
+    background: var(--dropdown-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color-light);
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.navbar-nav::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+/* ---------- Headers ---------- */
+.market-col h6 {
+    color: var(--heading-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ---------- Links ---------- */
+.market-col a {
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.market-col a:hover {
+    color: var(--primary-color);
+}
+
+/* ========= DESKTOP (>= 992px) ========= */
+@media (min-width: 992px) {
+
+    .markets-mega {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(12px);
+        min-width: max-content;
+        padding: 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1050;
+        pointer-events: none;
+    }
+
+    .markets-mega.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+    }
+
+    .markets-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* ========= MOBILE (< 992px) ========= */
+@media (max-width: 991.98px) {
+
+    .markets-mega {
+        display: none;
+        padding: 12px 0 0;
+        border: none;
+        box-shadow: none;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .markets-mega.show {
+        display: block;
+    }
+
+    .markets-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .market-col {
+        padding-left: 12px;
+        border-left: 2px solid var(--primary-color);
+    }
+}
+
+.sub-active {
+    color: var(--primary-color) !important;
+}
+
+
+/* TRADINGVIEW CHART */
+#tradingview_chart {
+    width: 100% !important;
+    height: 80vh !important;
+    margin: 0 auto;
+}
+
+
+/* ===============================
+   ACCORDION
+================================ */
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid var(--border-color-light);
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: var(--dropdown-color);
+}
+
+/* Header */
+.accordion-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 16px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--heading-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    color: var(--primary-color);
+}
+
+/* Icon */
+.accordion-icon {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+/* Body */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    color: var(--font-color);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Active state */
+.accordion-item.active .accordion-body {
+    max-height: 300px;
+    padding: 12px 18px 18px;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* ======== MOBILE TWEAKS ========= */
+@media (max-width: 576px) {
+    .accordion-header {
+        font-size: 15px;
+        padding: 14px 16px;
+    }
+
+    .accordion-body {
+        font-size: 13.5px;
     }
 }

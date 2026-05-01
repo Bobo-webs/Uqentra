@@ -21050,6 +21050,10 @@ p.para-counter {
     position: relative;
 }
 
+.tradable-dropdown .active {
+    color: var(--primary-color) !important;
+}
+
 .list-style li .fa-times {
     color: red !important;
 }
@@ -21265,4 +21269,45 @@ p.para-counter {
     .accordion-body {
         font-size: 13.5px;
     }
+}
+
+.topic-liner {
+    width: 60px;
+    border-top: 3px solid var(--primary-color);
+    opacity: 1;
+}
+
+
+/* ======== TABLE OF MARKET ======== */
+.responsive-table {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+thead th {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+tbody td {
+    padding: 12px;
+    border: 1px solid #fff;
+}
+
+section {
+    scroll-margin-top: 80px;
 }

@@ -10,7 +10,7 @@
     content="Founded to provide a secure, user-friendly, and diversified trading ecosystem for individuals and institutions" />
   <meta property="og:image" content="https://uqentra.vercel.app/assets/images/logo-icon.jpg" />
   <meta property="og:url" content="https://uqentra.vercel.app" />
-  <title>Services - Uqentra</title>
+  <title>Crypto - Uqentra</title>
 
   <!-- Links -->
   <link rel="icon" href="./assets/images/logo.png" />
@@ -49,10 +49,10 @@
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="services.html">Services</a>
+              <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item tradable-dropdown">
-              <a class="nav-link" href="#" id="marketsDropdown">
+              <a class="nav-link active" href="#" id="marketsDropdown">
                 Markets
                 <i class="fa fa-chevron-down ms-2 dropdown-arrow"></i>
               </a>
@@ -62,7 +62,7 @@
 
                   <div class="market-col">
                     <h6>Tradable Markets</h6>
-                    <a href="crypto-mkt.html">Crypto</a>
+                    <a class="active" href="crypto-mkt.html">Crypto</a>
                     <a href="stock-mkt.html">Stocks</a>
                     <a href="index-mkt.html">Indices</a>
                   </div>
@@ -104,12 +104,13 @@
       <div class="container py-5">
         <div class="w3breadcrumb-gids text-center py-sm-5 py-4">
           <div class="w3breadcrumb-info">
-            <h2 class="w3ltop-title">Services</h2>
+            <h2 class="w3ltop-title">Cryptocurrency Trading</h2>
           </div>
           <ul class="breadcrumbs-custom-path">
             <li><a href="index.html">Home</a></li>
             <li class="active">
-              <span class="fas fa-arrow-right mx-2"></span> Services
+              <span class="fas fa-arrow-right mx-2"></span> Markets
+              <span class="fas fa-arrow-right mx-2"></span> Cryptocurrency
             </li>
           </ul>
         </div>
@@ -117,51 +118,109 @@
     </div>
   </section>
 
-  <!--/about-section-->
-  <section class="w3l-feature-with-photo-1" id="ab">
-    <div class="feature-with-photo-hny py-5">
-      <div class="container py-lg-5">
-        <div class="ab-in-flow row mb-lg-5 mb-3">
-          <div class="col-lg-6 ab-right mb-lg-0 mb-4">
-            <h6 class="title-subhny">Creating a perfect trading environment for you</h6>
-            <h3 class="title-w3l mb-4">
-              Trade Anytime, Anywhere with Uqentra
-            </h3>
-            <p class="">
-              Our platform is dedicated to elevate trading through innovative technology, intelligent data
-              strategies, and seamless intuitive design, to help you build a strong financial
-              foundation tailored to your unique goals.
-            </p>
-            <p class="mt-3">
-              Through diversified investment options and expert insights, we
-              guide you towards making informed decisions that secure your
-              financial future. With the right strategies in place, you can
-              grow your wealth steadily and confidently.
-            </p>
-            <ul class="w3l-right-book w3l-right-book-grid mt-md-5 mt-4">
-              <li><span class="fas fa-check"></span> User-friendly Interface</li>
-              <li><span class="fas fa-check"></span> Fast Trade Execution</li>
-              <li><span class="fas fa-check"></span> Market Insights</li>
-              <li><span class="fas fa-check"></span> Advanced Security</li>
-              <li><span class="fas fa-check"></span> Advanced Charting Tools</li>
-              <li><span class="fas fa-check"></span> 24/7 Support</li>
-            </ul>
+  <!-- features-section -->
+  <section class="py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
+          <h3 class="title-w3l fw-semibold mb-3">Cryptocurrency Trading Explained</h3>
+          <hr class="mx-auto mb-4 topic-liner">
 
-            <div class="w3l-buttons mt-sm-5 mt-4">
-              <a class="btn btn-primary btn-style" href="register.html">Get Started</a>
-            </div>
-          </div>
-          <div class="col-lg-6 ab-left ps-lg-5">
-            <img src="assets/images/trading.jpg" alt="" class="img-fluid radius-image" />
-          </div>
+          <p class="lh-lg text-start">
+            Stocks represent a foundational asset class in the global financial ecosystem, providing traders with
+            direct participation in the performance of publicly traded companies. By engaging in share trading,
+            investors can capitalize on the shifting valuations of specific enterprises, industrial sectors, or entire
+            national economies without the operational responsibilities of business management.
+          </p>
+          <br>
+          <p class="lh-lg text-start">
+            Fluctuations in stock prices are driven by corporate earnings, macro-economic data, and shifts in market
+            sentiment. Whether you are targeting established blue-chip giants or high-growth tech innovators, stocks
+            offer a versatile path for both tactical short-term trading and long-term investment. By leveraging
+            regulated market structures and transparent pricing, traders can turn stock market volatility into
+            opportunity, using flexible position sizing to build a diversified portfolio that matches their specific
+            financial goals.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <div style="margin: 8px auto; display: block; text-align: center">
-    <!---728x90--->
-  </div>
+  <!--/markets-table-->
+  <section>
+    <h3 class="text-center mb-4 mt-4">Some Available Crypto Markets</h3>
+    <div class="container">
+      <!-- Responsive 3-Column Table -->
+      <div class="responsive-table mb-4 mt-4">
+        <table>
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Product</th>
+              <th>Currency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BTC</td>
+              <td>Bitcoin</td>
+              <td>USD</td>
+            </tr>
+            <tr>
+              <td>ETH</td>
+              <td>Ethereum</td>
+              <td>USD</td>
+            </tr>
+            <tr>
+              <td>USDT</td>
+              <td>Tether</td>
+              <td>USD</td>
+            </tr>
+            <tr>
+              <td>BNB</td>
+              <td>Binance Coin</td>
+              <td>USD</td>
+            </tr>
+            <tr>
+              <td>BCH</td>
+              <td>Bitcoin Cash</td>
+              <td>USD</td>
+            </tr>
+            <tr>
+              <td>SOL</td>
+              <td>Solana</td>
+              <td>USD</td>
+            </tr>
+            <tr>
+              <td>LTC</td>
+              <td>Litecoin</td>
+              <td>USD</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- features-section -->
+  <section class="py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
+
+          <h3 class="fw-semibold mb-3">Why Trade Crypto with Uqentra?</h3>
+          <p class="lh-lg text-start">
+            Experience a fluid and protected trading environment with Uqentra. Whether you’re on a phone, tablet, or
+            PC, our integration with the MT4 platform gives you total command over your portfolio from anywhere. To
+            truly maximize your edge, you can deploy Expert Advisors (EAs) to automate your strategies letting your
+            trades run 24/7 so you never miss a market move, even when you're offline.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--/registration-step-section-->
   <section class="w3l-services-page w3l-bg-grey py-5" id="work">
@@ -217,224 +276,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!--/w3l-pricing-->
-  <section class="w3l-pricing-sec py-5" id="pricing">
-    <div class="container py-md-5 py-2">
-      <div class="text-center">
-        <h6 class="title-subhny">Our Plans</h6>
-        <h3 class="title-w3l">Pricing Plans</h3>
-      </div>
-      <div class="row justify-content-center pricing-main-grids">
-        <div class="col-lg-4 col-md-6 pricing-main-grid mt-sm-5 mt-4">
-          <div class="w3-pricing-inner-inf">
-            <div class="pricing-header text-center">
-              <h4>Free Plan</h4>
-              <div class="price-wrapper mt-4">
-                <div class="price">
-                  <h5 class="currency">$</h5>
-                  <h5 class="heading headin-h3">0</h5>
-                </div>
-              </div>
-            </div>
-            <div class="pricing-body mt-4">
-              <div class="inner">
-                <ul class="list-style">
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access cryptocurrency trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access stock trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access index trading
-                  </li>
-                  <li>
-                    <span class="fa fa-times mr-2" aria-hidden="true"></span>
-                    Boosted Profit per Trade
-                  </li>
-                  <li>
-                    <span class="fa fa-times mr-2" aria-hidden="true"></span>
-                    Exclusive trading support
-                  </li>
-                </ul>
-              </div>
-              <div class="pricing-get-button my-4">
-                <a class="btn btn-style btn-primary d-block" style="border: 2px solid #000" href="plan.html">Get
-                  Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pricing-main-grid mt-sm-5 mt-4">
-          <div class="w3-pricing-inner-inf">
-            <div class="pricing-header text-center">
-              <h4>Couples Plan</h4>
-              <div class="price-wrapper mt-4">
-                <div class="price">
-                  <h5 class="currency">$</h5>
-                  <h5 class="heading headin-h3">199/month &nbsp; | &nbsp; $2,000/year</h5>
-                </div>
-              </div>
-            </div>
-            <div class="pricing-body mt-4">
-              <div class="inner">
-                <ul class="list-style">
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access cryptocurrency trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access stock trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access index trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    40% Boosted Profit per Trade
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Exclusive trading support
-                  </li>
-                </ul>
-              </div>
-              <div class="pricing-get-button my-4">
-                <a class="btn btn-style btn-primary d-block" style="border: 2px solid #000" href="plan.html">Get
-                  Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pricing-main-grid mt-sm-5 mt-4">
-          <div class="w3-pricing-inner-inf">
-            <div class="pricing-header text-center">
-              <h4>Compounding Plan</h4>
-              <div class="price-wrapper mt-4">
-                <div class="price">
-                  <h5 class="currency">$</h5>
-                  <h5 class="heading headin-h3">499/month &nbsp; | &nbsp; $5,500/year</h5>
-                </div>
-              </div>
-            </div>
-            <div class="pricing-body mt-4">
-              <div class="inner">
-                <ul class="list-style">
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access cryptocurrency trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access stock trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access index trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    60% Boosted Profit per Trade
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Exclusive trading support
-                  </li>
-                </ul>
-              </div>
-              <div class="pricing-get-button my-4">
-                <a class="btn btn-style btn-primary d-block" style="border: 2px solid #000">Comin Soon</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- /faq accordion -->
-  <section id="faq" class="accordion mt-5 mb-5">
-    <h3 class="title-w3l text-center mb-5">FAQ</h3>
-    <div class="accordion-item">
-      <button class="accordion-header">
-        What is Uqentra?
-        <i class="fa fa-chevron-down accordion-icon"></i>
-      </button>
-      <div class="accordion-body">
-        <p>
-          Uqentra is an online trading platform that allows users to trade global markets, including stocks, indices,
-          and cryptocurrencies.
-        </p>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Can I start trading immediately after registration?
-        <i class="fa fa-chevron-down accordion-icon"></i>
-      </button>
-      <div class="accordion-body">
-        <p>
-          Yes, after registration is complete and you have funded your account, you can start trading instantly.
-        </p>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Which assets can I trade on Uqentra?
-        <i class="fa fa-chevron-down accordion-icon"></i>
-      </button>
-      <div class="accordion-body">
-        <p>
-          Currently, you can trade cryptocurrencies, stocks, and indices. Forex and CFDs trading are coming soon.
-        </p>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Is Uqentra safe and regulated?
-        <i class="fa fa-chevron-down accordion-icon"></i>
-      </button>
-      <div class="accordion-body">
-        <p>
-          We employ strong security measures to protect your funds and personal information.
-        </p>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-header">
-        How can I deposit and withdraw funds?
-        <i class="fa fa-chevron-down accordion-icon"></i>
-      </button>
-      <div class="accordion-body">
-        <p>
-          Deposits and withdrawals can be made via supported payment methods listed in your account dashboard.
-          Processing times vary by method.
-        </p>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-header">
-        Do you provide trading tools or educational resources?
-        <i class="fa fa-chevron-down accordion-icon"></i>
-      </button>
-      <div class="accordion-body">
-        <p>
-          Yes, Uqentra offers charts, analytics, and learning resources to help you make informed trading decisions.
-        </p>
       </div>
     </div>
   </section>

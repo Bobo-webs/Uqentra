@@ -10,7 +10,7 @@
     content="Founded to provide a secure, user-friendly, and diversified trading ecosystem for individuals and institutions" />
   <meta property="og:image" content="https://uqentra.vercel.app/assets/images/logo-icon.jpg" />
   <meta property="og:url" content="https://uqentra.vercel.app" />
-  <title>Services - Uqentra</title>
+  <title>GBP/USD - Uqentra</title>
 
   <!-- Links -->
   <link rel="icon" href="./assets/images/logo.png" />
@@ -22,6 +22,7 @@
 
   <!-- ===== Script ===== -->
   <script src="/assets/js/network-state.js"></script>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 </head>
 
 <body>
@@ -49,10 +50,10 @@
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="services.html">Services</a>
+              <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item tradable-dropdown">
-              <a class="nav-link" href="#" id="marketsDropdown">
+              <a class="nav-link active" href="#" id="marketsDropdown">
                 Markets
                 <i class="fa fa-chevron-down ms-2 dropdown-arrow"></i>
               </a>
@@ -73,7 +74,7 @@
                     <a href="tsla.html">Tesla</a>
                     <a href="dji.html">Dow Jones</a>
                     <a href="meta.html">Meta</a>
-                    <a href="gbpusd.html">GBP/USD</a>
+                    <a class="active" href="gbpusd.html">GBP/USD</a>
                   </div>
 
                 </div>
@@ -104,12 +105,13 @@
       <div class="container py-5">
         <div class="w3breadcrumb-gids text-center py-sm-5 py-4">
           <div class="w3breadcrumb-info">
-            <h2 class="w3ltop-title">Services</h2>
+            <h2 class="w3ltop-title">GBP/USD Trading</h2>
           </div>
           <ul class="breadcrumbs-custom-path">
             <li><a href="index.html">Home</a></li>
             <li class="active">
-              <span class="fas fa-arrow-right mx-2"></span> Services
+              <span class="fas fa-arrow-right mx-2"></span> Markets
+              <span class="fas fa-arrow-right mx-2"></span> GBP/USD
             </li>
           </ul>
         </div>
@@ -117,51 +119,74 @@
     </div>
   </section>
 
-  <!--/about-section-->
-  <section class="w3l-feature-with-photo-1" id="ab">
-    <div class="feature-with-photo-hny py-5">
-      <div class="container py-lg-5">
-        <div class="ab-in-flow row mb-lg-5 mb-3">
-          <div class="col-lg-6 ab-right mb-lg-0 mb-4">
-            <h6 class="title-subhny">Creating a perfect trading environment for you</h6>
-            <h3 class="title-w3l mb-4">
-              Trade Anytime, Anywhere with Uqentra
-            </h3>
-            <p class="">
-              Our platform is dedicated to elevate trading through innovative technology, intelligent data
-              strategies, and seamless intuitive design, to help you build a strong financial
-              foundation tailored to your unique goals.
-            </p>
-            <p class="mt-3">
-              Through diversified investment options and expert insights, we
-              guide you towards making informed decisions that secure your
-              financial future. With the right strategies in place, you can
-              grow your wealth steadily and confidently.
-            </p>
-            <ul class="w3l-right-book w3l-right-book-grid mt-md-5 mt-4">
-              <li><span class="fas fa-check"></span> User-friendly Interface</li>
-              <li><span class="fas fa-check"></span> Fast Trade Execution</li>
-              <li><span class="fas fa-check"></span> Market Insights</li>
-              <li><span class="fas fa-check"></span> Advanced Security</li>
-              <li><span class="fas fa-check"></span> Advanced Charting Tools</li>
-              <li><span class="fas fa-check"></span> 24/7 Support</li>
-            </ul>
+  <!-- features-section -->
+  <section class="py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
+          <h3 class="title-w3l fw-semibold mb-3">British Pound / U.S. Dollar Trading (GBP/USD)</h3>
+          <hr class="mx-auto mb-4 topic-liner">
 
-            <div class="w3l-buttons mt-sm-5 mt-4">
-              <a class="btn btn-primary btn-style" href="register.html">Get Started</a>
-            </div>
-          </div>
-          <div class="col-lg-6 ab-left ps-lg-5">
-            <img src="assets/images/trading.jpg" alt="" class="img-fluid radius-image" />
-          </div>
+          <p class="text-center">
+            GBP/USD, commonly known as "The Cable," is one of the oldest and most liquid currency pairs in the Forex
+            market, representing the exchange rate between the British Pound Sterling and the U.S. Dollar. As a
+            cornerstone of global finance, its price action is a real-time reflection of the relative economic strength
+            between the United Kingdom and the United States. Unlike fixed assets, the GBP/USD exchange rate is highly
+            sensitive to interest rate decisions from the Bank of England (BoE) and the Federal Reserve, as well as
+            geopolitical events and macroeconomic data like GDP and inflation reports.
+          </p>
+
+          <div class="mt-4" id="tradingview_chart"></div>
+          <script type="text/javascript">
+            new TradingView.widget(
+              {
+                "width": "100%",
+                "height": "100%",
+                "symbol": "FX:GBPUSD",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "studies": [
+                  "MASimple@tv-basicstudies"
+                ],
+                "container_id": "tradingview_chart",
+                "autosize": true
+              }
+            );
+          </script>
         </div>
       </div>
     </div>
   </section>
 
-  <div style="margin: 8px auto; display: block; text-align: center">
-    <!---728x90--->
-  </div>
+  <!--/grids-->
+  <section class="w3l-grids-3 py-5" id="about">
+    <div class="container py-md-5 py-3">
+      <div class="row w3home-ab-grids">
+        <div class="w3ab-left-top col-lg-6 mt-lg-0 mt-4 pt-lg-0 pt-2">
+          <h3 class="title-w3l mb-2">Trading GBP/USD with Uqentra</h3>
+          <p class="my-3">
+            While Forex pairs like GBP/USD aren't live yet, we are currently working on integrating them into the
+            Uqentra platform. Stay tuned for the upcoming expansion of our tradable Forex markets, arriving very soon.
+            <br><br>
+            Whether you're a day trader or a long-term
+            investor, our upcoming Forex expansion is built to provide the speed, precision, and control you need to
+            thrive in a multi-asset landscape.
+          </p>
+
+          <a href="stock.html" class="btn btn-style btn-primary mt-4 mb-4">Start Trading</a>
+        </div>
+        <div class="w3ab-right-top col-lg-6 pe-lg-5">
+          <img src="assets/images/gbpusd.png" alt="" class="img-fluid radius-image" />
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--/registration-step-section-->
   <section class="w3l-services-page w3l-bg-grey py-5" id="work">
@@ -209,7 +234,7 @@
             </div>
             <div class="icon-info text-left">
               <h4>
-                <a href="dashboard-crypto.html" class="title-head mt-0">Start trading</a>
+                <a href="stock.html" class="title-head mt-0">Start trading</a>
               </h4>
               <p class="text-para">
                 Access the markets to execute trades with precision
@@ -221,223 +246,86 @@
     </div>
   </section>
 
-  <!--/w3l-pricing-->
-  <section class="w3l-pricing-sec py-5" id="pricing">
-    <div class="container py-md-5 py-2">
-      <div class="text-center">
-        <h6 class="title-subhny">Our Plans</h6>
-        <h3 class="title-w3l">Pricing Plans</h3>
-      </div>
-      <div class="row justify-content-center pricing-main-grids">
-        <div class="col-lg-4 col-md-6 pricing-main-grid mt-sm-5 mt-4">
-          <div class="w3-pricing-inner-inf">
-            <div class="pricing-header text-center">
-              <h4>Free Plan</h4>
-              <div class="price-wrapper mt-4">
-                <div class="price">
-                  <h5 class="currency">$</h5>
-                  <h5 class="heading headin-h3">0</h5>
-                </div>
-              </div>
-            </div>
-            <div class="pricing-body mt-4">
-              <div class="inner">
-                <ul class="list-style">
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access cryptocurrency trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access stock trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access index trading
-                  </li>
-                  <li>
-                    <span class="fa fa-times mr-2" aria-hidden="true"></span>
-                    Boosted Profit per Trade
-                  </li>
-                  <li>
-                    <span class="fa fa-times mr-2" aria-hidden="true"></span>
-                    Exclusive trading support
-                  </li>
-                </ul>
-              </div>
-              <div class="pricing-get-button my-4">
-                <a class="btn btn-style btn-primary d-block" style="border: 2px solid #000" href="plan.html">Get
-                  Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pricing-main-grid mt-sm-5 mt-4">
-          <div class="w3-pricing-inner-inf">
-            <div class="pricing-header text-center">
-              <h4>Couples Plan</h4>
-              <div class="price-wrapper mt-4">
-                <div class="price">
-                  <h5 class="currency">$</h5>
-                  <h5 class="heading headin-h3">199/month &nbsp; | &nbsp; $2,000/year</h5>
-                </div>
-              </div>
-            </div>
-            <div class="pricing-body mt-4">
-              <div class="inner">
-                <ul class="list-style">
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access cryptocurrency trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access stock trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access index trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    40% Boosted Profit per Trade
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Exclusive trading support
-                  </li>
-                </ul>
-              </div>
-              <div class="pricing-get-button my-4">
-                <a class="btn btn-style btn-primary d-block" style="border: 2px solid #000" href="plan.html">Get
-                  Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pricing-main-grid mt-sm-5 mt-4">
-          <div class="w3-pricing-inner-inf">
-            <div class="pricing-header text-center">
-              <h4>Compounding Plan</h4>
-              <div class="price-wrapper mt-4">
-                <div class="price">
-                  <h5 class="currency">$</h5>
-                  <h5 class="heading headin-h3">499/month &nbsp; | &nbsp; $5,500/year</h5>
-                </div>
-              </div>
-            </div>
-            <div class="pricing-body mt-4">
-              <div class="inner">
-                <ul class="list-style">
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access cryptocurrency trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access stock trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Access index trading
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    60% Boosted Profit per Trade
-                  </li>
-                  <li>
-                    <span class="fa fa-check mr-2" aria-hidden="true"></span>
-                    Exclusive trading support
-                  </li>
-                </ul>
-              </div>
-              <div class="pricing-get-button my-4">
-                <a class="btn btn-style btn-primary d-block" style="border: 2px solid #000">Comin Soon</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- /faq accordion -->
-  <section id="faq" class="accordion mt-5 mb-5">
+  <div class="accordion mt-5 mb-5">
     <h3 class="title-w3l text-center mb-5">FAQ</h3>
     <div class="accordion-item">
       <button class="accordion-header">
-        What is Uqentra?
+        What is GBP/USD?
         <i class="fa fa-chevron-down accordion-icon"></i>
       </button>
       <div class="accordion-body">
         <p>
-          Uqentra is an online trading platform that allows users to trade global markets, including stocks, indices,
-          and cryptocurrencies.
+          GBP/USD is the forex ticker representing the exchange rate between the British Pound Sterling (GBP) and the
+          U.S. Dollar (USD).
         </p>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-header">
-        Can I start trading immediately after registration?
+        When is the GBP/USD most volatile?
         <i class="fa fa-chevron-down accordion-icon"></i>
       </button>
       <div class="accordion-body">
         <p>
-          Yes, after registration is complete and you have funded your account, you can start trading instantly.
+          During the overlap of the London and New York sessions (typically 8:00 AM – 12:00 PM ET).
         </p>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-header">
-        Which assets can I trade on Uqentra?
+        What drives the price?
         <i class="fa fa-chevron-down accordion-icon"></i>
       </button>
       <div class="accordion-body">
         <p>
-          Currently, you can trade cryptocurrencies, stocks, and indices. Forex and CFDs trading are coming soon.
+          Key drivers include interest rate decisions, GDP growth, inflation data, and political events in both the UK
+          and the US.
         </p>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-header">
-        Is Uqentra safe and regulated?
+        Is the GBP/USD highly liquid?
         <i class="fa fa-chevron-down accordion-icon"></i>
       </button>
       <div class="accordion-body">
         <p>
-          We employ strong security measures to protect your funds and personal information.
+          Yes, its status as a major pair ensures deep liquidity and typically tight spreads during peak hours.
         </p>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-header">
-        How can I deposit and withdraw funds?
+        Can I trade GBP/USD on Uqentra?
         <i class="fa fa-chevron-down accordion-icon"></i>
       </button>
       <div class="accordion-body">
         <p>
-          Deposits and withdrawals can be made via supported payment methods listed in your account dashboard.
-          Processing times vary by method.
+          At the moment, forex trading, including GBP/USD, is not yet available on Uqentra. But
+          worry less, our team is working hard to bring a full range of forex pairs to the platform soon. Stay
+          tuned for updates as we expand our tradable markets!
         </p>
       </div>
     </div>
 
     <div class="accordion-item">
       <button class="accordion-header">
-        Do you provide trading tools or educational resources?
+        What is the risk of leverage?
         <i class="fa fa-chevron-down accordion-icon"></i>
       </button>
       <div class="accordion-body">
         <p>
-          Yes, Uqentra offers charts, analytics, and learning resources to help you make informed trading decisions.
+          Leverage amplifies both potential profits and potential losses, meaning a small market move can significantly
+          impact your capital.
         </p>
       </div>
     </div>
-  </section>
+  </div>
 
   <!--/footer-->
   <footer class="w3l-footer">

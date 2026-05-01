@@ -21032,10 +21032,26 @@ p.para-counter {
     }
 }
 
+/* ========= CUSTOM ======== */
+.footer-logo {
+    margin-top: -1rem;
+}
+
+.footer-links li a {
+    color: var(--nav-color);
+}
+
+.footer-links li a:hover {
+    color: var(--primary-color);
+}
 
 /* ========= TRADABLE ======== */
 .tradable-dropdown {
     position: relative;
+}
+
+.list-style li .fa-times {
+    color: red !important;
 }
 
 /* ---------- Trigger Link ---------- */

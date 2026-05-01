@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tradableDropdown = tradableTrigger?.nextElementSibling;
     const tradableArrow = tradableTrigger?.querySelector(".dropdown-arrow");
 
-    // ======== TRADABLE MARKETS (CLICK ONLY) =========
+    // ======== Markets (CLICK ONLY) =========
     if (tradableTrigger && tradableDropdown && tradableArrow) {
         tradableTrigger.addEventListener("click", (e) => {
             e.preventDefault();

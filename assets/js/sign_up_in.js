@@ -1,6 +1,4 @@
-// ════════════════════════════════════════════════════════════
-//  Sign Up + Sign In
-// ════════════════════════════════════════════════════════════
+//  SIGN_UP_IN.JS
 
 import { auth, db } from "/assets/js/firebase-init.js";
 
@@ -22,29 +20,25 @@ console.log(
   "color:#32cd32;font-weight:bold;font-size:16px;background:#000;padding:8px 16px;border-radius:8px;"
 );
 
-// ────────────────────────────────────────────
-//  HASH-BASED TAB ROUTING
-// ────────────────────────────────────────────
+
+// HASH-BASED TAB ROUTING
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.hash === "#signin") switchTab("signin");
   if (window.location.hash === "#signup") switchTab("signup");
 });
 
-// ────────────────────────────────────────────
-//  LOADING OVERLAY
-// ────────────────────────────────────────────
+
+// LOADING OVERLAY
 const showLoading = () =>
   document.getElementById("loading-overlay")?.classList.add("show");
 
 const hideLoading = () =>
   document.getElementById("loading-overlay")?.classList.remove("show");
 
-// ────────────────────────────────────────────
-//  SUBMISSION LOCK + BUTTON SPINNER
-// ────────────────────────────────────────────
+
+// SUBMISSION LOCK + BUTTON SPINNER
 let isSubmitting = false;
 
-// Injects a CSS keyframe once into the page for the spinner animation
 const injectSpinnerStyle = () => {
   if (document.getElementById("__spinner-style")) return;
   const style = document.createElement("style");
@@ -75,7 +69,6 @@ const lockSubmit = (btn, loadingText) => {
   btn.disabled = true;
   btn.style.opacity = "0.75";
   btn.style.cursor = "not-allowed";
-  // Store original label so we can restore it later
   btn.dataset.originalText = btn.textContent;
   btn.innerHTML = `<span class="__btn-spinner"></span>${loadingText}`;
 };
@@ -88,9 +81,8 @@ const unlockSubmit = (btn) => {
   btn.innerHTML = btn.dataset.originalText || btn.innerHTML;
 };
 
-// ════════════════════════════════════════════
-//  SHARED VALIDATION HELPERS
-// ════════════════════════════════════════════
+
+// VALIDATION HELPERS
 const isValidEmail = (val) =>
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
     String(val).toLowerCase()
@@ -137,15 +129,13 @@ const clearAllFields = () => {
     .forEach((el) => clearFieldState(el));
 };
 
-// ════════════════════════════════════════════
-//  GOOGLE AUTH  (sign up + sign in)
-// ════════════════════════════════════════════
+
+// GOOGLE AUTH  (sign up + sign in)
 const googleProvider = new GoogleAuthProvider();
 
 const handleGoogleAuth = async () => {
   if (isSubmitting) return;
 
-  // Lock both google buttons while in flight
   const btnGoogleSignup = document.getElementById("btn-google-signup");
   const btnGoogleSignin = document.getElementById("btn-google-signin");
   lockSubmit(btnGoogleSignup, "Connecting…");
@@ -164,18 +154,14 @@ const handleGoogleAuth = async () => {
 
     showToast("Checking your account…", "info");
 
-    // Check if user already exists in RTDB
     const snapshot = await get(ref(db, "users/" + user.uid));
 
     if (!snapshot.exists()) {
-      // Brand new user — write their profile to RTDB
-      // Pull whatever Google gives us, fall back gracefully if missing
       showToast("Setting up your account…", "info");
 
       const displayName = user.displayName || "";
       const nameParts = displayName.trim().split(" ");
       const firstName = nameParts[0] || "";
-      // Build a clean username from their email prefix, strip anything not allowed
       const rawUsername = (user.email || "").split("@")[0].replace(/[^a-zA-Z0-9._]/g, "").slice(0, 16);
       const username = /^[a-zA-Z]/.test(rawUsername) ? rawUsername : "user_" + rawUsername.slice(0, 11);
 
@@ -202,7 +188,6 @@ const handleGoogleAuth = async () => {
       }, 2000);
 
     } else {
-      // Returning user — just check role and redirect
       const role = snapshot.val().role || "user";
       hideLoading();
       showToast("Welcome back! Redirecting…", "success");
@@ -220,7 +205,6 @@ const handleGoogleAuth = async () => {
     console.error("GOOGLE AUTH ERROR:", error);
 
     if (error.code === "auth/popup-closed-by-user" || error.code === "auth/cancelled-popup-request") {
-      // User just closed the popup — no need for an error toast, it was intentional
       showToast("Google sign-in was cancelled.", "info");
     } else if (error.code === "auth/network-request-failed") {
       showToast("No internet connection. Please try again.", "error");
@@ -232,13 +216,11 @@ const handleGoogleAuth = async () => {
   }
 };
 
-// Wire both buttons to the same handler
 document.getElementById("btn-google-signup")?.addEventListener("click", handleGoogleAuth);
 document.getElementById("btn-google-signin")?.addEventListener("click", handleGoogleAuth);
 
-// ════════════════════════════════════════════
-//  SIGN UP
-// ════════════════════════════════════════════
+
+// SIGN UP
 const suUsername = document.getElementById("su-username");
 const suFullname = document.getElementById("su-fullname");
 const suEmail = document.getElementById("su-email");
@@ -358,7 +340,6 @@ btnSignup.addEventListener("click", async (e) => {
     });
 
     hideLoading();
-    // No unlockSubmit here — redirecting, no need to restore the button
     showToast("Welcome! Taking you to your dashboard…", "success");
 
     setTimeout(() => {
@@ -381,9 +362,8 @@ btnSignup.addEventListener("click", async (e) => {
   }
 });
 
-// ════════════════════════════════════════════
-//  SIGN IN
-// ════════════════════════════════════════════
+
+// SIGN IN
 const siEmail = document.getElementById("si-email");
 const siPassword = document.getElementById("si-password");
 const btnSignin = document.getElementById("btn-signin-submit");
@@ -453,7 +433,6 @@ btnSignin.addEventListener("click", async (e) => {
 
     const role = snapshot.val().role || "user";
     hideLoading();
-    // No unlockSubmit here — redirecting, no need to restore the button
     showToast("Welcome back! Redirecting…", "success");
 
     setTimeout(() => {
@@ -486,18 +465,14 @@ btnSignin.addEventListener("click", async (e) => {
   }
 });
 
-// ────────────────────────────────────────────
-//  CLEAR FIELD ERRORS ON TAB SWITCH
-// ────────────────────────────────────────────
+
+// CLEARING STATES
 const _originalSwitchTab = window.switchTab;
 window.switchTab = (tab) => {
   _originalSwitchTab(tab);
   clearAllFields();
 };
 
-// ────────────────────────────────────────────
-//  CLEAR INDIVIDUAL FIELD ERROR ON USER INPUT
-// ────────────────────────────────────────────
 [suUsername, suFullname, suEmail, suPassword, suConfirm, siEmail, siPassword]
   .forEach((el) => {
     el?.addEventListener("input", () => clearFieldState(el));

@@ -26,7 +26,7 @@
    height: 100%;
    background: var(--bg);
    color: var(--text);
-   font-family: 'DM Sans', sans-serif;
+   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
    -webkit-font-smoothing: antialiased;
  }
 
@@ -182,38 +182,27 @@
  .brand {
    display: flex;
    align-items: center;
-   gap: .65rem;
    margin-bottom: 2.5rem;
  }
 
  .brand-logo {
-   width: 42px;
-   height: 42px;
+   width: 27px;
    border-radius: 10px;
-   background: var(--brand);
    display: flex;
    align-items: center;
    justify-content: center;
    flex-shrink: 0;
-   box-shadow: 0 0 20px rgba(50, 205, 50, .35);
-   /* ── swap the SVG below for your actual logo image ── */
  }
 
- .brand-logo svg {
+ .brand-logo img {
    width: 24px;
    height: 24px;
    fill: #0a0a0a;
  }
 
  .brand-name {
-   font-family: 'Syne', sans-serif;
    font-size: 1.5rem;
    font-weight: 800;
-   letter-spacing: -.02em;
-   color: var(--text);
- }
-
- .brand-name span {
    color: var(--brand);
  }
 
@@ -393,7 +382,6 @@
 
  .btn-submit:hover {
    background: #28b828;
-   box-shadow: 0 0 28px rgba(50, 205, 50, .4);
    transform: translateY(-1px);
  }
 

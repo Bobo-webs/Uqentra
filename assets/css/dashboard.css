@@ -6,7 +6,8 @@ html {
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
-    --bs-purple: #6f42c1 --bs-pink: #d63384;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
     --bs-red-bg: #fee2e2;
     --bs-red: #dc3545;
     --bs-orange: #fd7e14;
@@ -14,7 +15,7 @@ html {
     --bs-pending-bg: #fff3cd;
     --bs-pending: #856404;
     --bs-green: #198754;
-    --bs-dark-green: rgb(15, 136, 15);
+    --bs-dark-green: #0f880f;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
     --bs-white: #fff;
@@ -22,7 +23,7 @@ html {
     --bs-gray-dark: #343a40;
     --bs-primary: #0d6efd;
     --bs-secondary: #6c757d;
-    --bright-green: rgb(19, 223, 19);
+    --bright-green: #13df13;
     --bs-success-bg: #dcfce7;
     --bs-success: #198754;
     --bs-info: #0dcaf0;

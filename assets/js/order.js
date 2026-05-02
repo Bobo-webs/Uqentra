@@ -14,7 +14,7 @@ import {
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
 // EMAILJS INIT
-emailjs.init("OhUilmHKZjlDViGXq");
+emailjs.init("OgxZ1n9_a_mMTXujH");
 
 const el = id => document.getElementById(id);
 const assetEl = el('tx-asset');
@@ -164,7 +164,7 @@ async function sendTradeNotification(user, tradeData) {
 
     try {
         console.log("Sending Trade Notification...");
-        await emailjs.send("service_jkfz31k", "template_vlvyszb", templateParams);
+        await emailjs.send("service_7wwif5c", "template_4wkbk0w", templateParams);
         console.log("Admin notified");
     } catch (error) {
         console.error("EmailJS failed:", error);

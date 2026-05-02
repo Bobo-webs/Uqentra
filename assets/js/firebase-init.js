@@ -1,18 +1,18 @@
-// firebase-init.js — FINAL CLEAN VERSION (NO WARNINGS)
+// firebase-init.js
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB7UOOdjUgbYfNyZbNgdOCjkYRhxfJf_14",
-    authDomain: "investify-traders-net.firebaseapp.com",
-    databaseURL: "https://investify-traders-net-default-rtdb.firebaseio.com",
-    projectId: "investify-traders-net",
-    storageBucket: "investify-traders-net.firebasestorage.app",
-    messagingSenderId: "769846151420",
-    appId: "1:769846151420:web:a85156de7f33127b08af79",
-    measurementId: "G-E6KSCFYTB6"
+    apiKey: "AIzaSyD0Zjrd8jRlgJkWxMC-M1h8tIV9-pRGcEI",
+    authDomain: "uqentra-usa.firebaseapp.com",
+    databaseURL: "https://uqentra-usa-default-rtdb.firebaseio.com",
+    projectId: "uqentra-usa",
+    storageBucket: "uqentra-usa.firebasestorage.app",
+    messagingSenderId: "343589265051",
+    appId: "1:343589265051:web:1f42835da0a6a8a0bdb03e",
+    measurementId: "G-379X05PV6H"
 };
 
 export const app = initializeApp(firebaseConfig);
@@ -24,6 +24,5 @@ window.firebaseDatabase = db;
 window.auth = auth;
 
 // RTDB offline persistence = ENABLED BY DEFAULT in v10+
-// Nothing else needed — it's already working
 
 console.log("%cFirebase Ready — RTDB Offline Active", "color:#00ff9d;font-weight:bold;");

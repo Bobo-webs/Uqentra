@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta property="og:title" content="Uqentra" />
+  <meta property="og:description"
+    content="Founded to provide a secure, user-friendly, and diversified trading ecosystem for individuals and institutions" />
+  <meta property="og:image" content="https://uqentra.vercel.app/assets/images/logo-icon.jpg" />
+  <meta property="og:url" content="https://uqentra.vercel.app" />
+  <title>Sign Up / In — Uqentra</title>
+
+  <!-- Links -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="/assets/css/sign_up_in.css" />
+
+  <!-- ===== Script ===== -->
+  <script src="/assets/js/network-state.js"></script>
+  <script src="/assets/js/toast.js"></script>
+  <script src="/assets/js/sign_up_in.js"></script>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- ══ LEFT DECORATIVE PANEL ══ -->
+    <div class="panel-left">
+      <div class="grid-lines"></div>
+      <div class="orbit orbit-1">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="orbit-dot"></div>
+      </div>
+      <div class="orbit orbit-3">
+        <div class="orbit-dot"></div>
+      </div>
+
+      <div class="panel-left-content">
+        <p class="panel-tagline">Your vision,<br><span>amplified.</span></p>
+        <p class="panel-sub">Join thousands building something extraordinary. Sign up in seconds and start creating
+          today.</p>
+        <div class="dots">
+          <div class="dot active" id="dot-0"></div>
+          <div class="dot" id="dot-1"></div>
+          <div class="dot" id="dot-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ RIGHT FORM PANEL ══ -->
+    <div class="panel-right">
+      <div class="form-shell">
+
+        <!-- BRAND -->
+        <div class="brand">
+          <div class="brand-logo">
+            <img src="/assets/images/logo.png" alt="Uqentra" />
+          </div>
+          <span class="brand-name"><span>qentra</span></span>
+        </div>
+
+        <!-- TAB TOGGLE -->
+        <div class="tabs">
+          <button class="tab-btn active" id="tab-signup" onclick="switchTab('signup')">Sign Up</button>
+          <button class="tab-btn" id="tab-signin" onclick="switchTab('signin')">Sign In</button>
+        </div>
+
+        <!-- ══════════════ SIGN UP VIEW ══════════════ -->
+        <div class="auth-view active" id="view-signup">
+
+          <div class="form-heading">
+            <h1>Create account</h1>
+            <p>Fill in your details to get started.</p>
+          </div>
+
+          <!-- Social sign-up -->
+          <div class="social-row">
+            <button class="btn-social" id="btn-google-signup" type="button">
+              <!-- Google icon -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  fill="#4285F4" />
+                <path
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  fill="#34A853" />
+                <path
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                  fill="#FBBC05" />
+                <path
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  fill="#EA4335" />
+              </svg>
+              Google
+            </button>
+            <button class="btn-social" id="btn-github-signup" type="button">
+              <!-- GitHub icon -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+              GitHub
+            </button>
+          </div>
+
+          <div class="divider">or continue with email</div>
+
+          <!-- Username -->
+          <div class="field">
+            <label for="su-username">Username</label>
+            <div class="input-wrap">
+              <input type="text" id="su-username" name="username" placeholder="e.g. johndoe123"
+                autocomplete="username" />
+            </div>
+          </div>
+
+          <!-- Full Name -->
+          <div class="field">
+            <label for="su-fullname">Full Name</label>
+            <div class="input-wrap">
+              <input type="text" id="su-fullname" name="fullname" placeholder="John Doe" autocomplete="name" />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label for="su-email">Email Address</label>
+            <div class="input-wrap">
+              <input type="email" id="su-email" name="email" placeholder="john@example.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="field">
+            <label for="su-password">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="su-password" name="password" placeholder="Min. 8 characters" class="has-icon"
+                autocomplete="new-password" />
+              <button class="eye-btn" type="button" onclick="toggleEye(this,'su-password')" aria-label="Show password">
+                <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <svg class="eye-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="field">
+            <label for="su-confirm">Confirm Password</label>
+            <div class="input-wrap">
+              <input type="password" id="su-confirm" name="confirm_password" placeholder="Re-enter password"
+                class="has-icon" autocomplete="new-password" />
+              <button class="eye-btn" type="button" onclick="toggleEye(this,'su-confirm')"
+                aria-label="Show confirm password">
+                <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <svg class="eye-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terms -->
+          <div class="checkbox-row">
+            <input type="checkbox" id="su-terms" />
+            <span>I agree to the <a href="#" tabindex="-1">Terms of Service</a> and <a href="#" tabindex="-1">Privacy
+                Policy</a></span>
+          </div>
+
+          <button class="btn-submit" type="button" id="btn-signup-submit">Create Account</button>
+
+          <p class="form-footer">
+            Already have an account? <a onclick="switchTab('signin')">Sign in</a>
+          </p>
+        </div>
+
+        <!-- ══════════════ SIGN IN VIEW ══════════════ -->
+        <div class="auth-view" id="view-signin">
+
+          <div class="form-heading">
+            <h1>Welcome back</h1>
+            <p>Sign in to continue to your account.</p>
+          </div>
+
+          <!-- Social sign-in -->
+          <div class="social-row">
+            <button class="btn-social" id="btn-google-signin" type="button">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  fill="#4285F4" />
+                <path
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  fill="#34A853" />
+                <path
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                  fill="#FBBC05" />
+                <path
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  fill="#EA4335" />
+              </svg>
+              Google
+            </button>
+            <button class="btn-social" id="btn-github-signin" type="button">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+              GitHub
+            </button>
+          </div>
+
+          <div class="divider">or continue with email</div>
+
+          <!-- Email -->
+          <div class="field">
+            <label for="si-email">Email Address</label>
+            <div class="input-wrap">
+              <input type="email" id="si-email" name="email" placeholder="john@example.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="field">
+            <label for="si-password">Password</label>
+            <div class="input-wrap">
+              <input type="password" id="si-password" name="password" placeholder="Your password" class="has-icon"
+                autocomplete="current-password" />
+              <button class="eye-btn" type="button" onclick="toggleEye(this,'si-password')" aria-label="Show password">
+                <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <svg class="eye-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember + Forgot -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;">
+            <label
+              style="display:flex;align-items:center;gap:.4rem;text-transform:none;letter-spacing:0;font-size:.83rem;color:var(--muted);cursor:pointer;">
+              <input type="checkbox" id="si-remember" style="accent-color:var(--brand);width:15px;height:15px;" />
+              Remember me
+            </label>
+            <div class="forgot"><a href="#" id="btn-forgot">Forgot password?</a></div>
+          </div>
+
+          <button class="btn-submit" type="button" id="btn-signin-submit">Sign In</button>
+
+          <p class="form-footer">
+            Don't have an account? <a onclick="switchTab('signup')">Sign up</a>
+          </p>
+        </div>
+        <!-- ══ END SIGN IN ══ -->
+
+      </div><!-- /form-shell -->
+    </div><!-- /panel-right -->
+  </div><!-- /page -->
+
+  <div id="toast"></div>
+
+  <script>
+    /* ────────────────────────────────────────────
+       TAB SWITCHING
+    ──────────────────────────────────────────── */
+    function switchTab(tab) {
+      const isSignup = tab === 'signup';
+
+      document.getElementById('tab-signup').classList.toggle('active', isSignup);
+      document.getElementById('tab-signin').classList.toggle('active', !isSignup);
+      document.getElementById('view-signup').classList.toggle('active', isSignup);
+      document.getElementById('view-signin').classList.toggle('active', !isSignup);
+
+      // Animate left panel dots
+      document.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('active', i === (isSignup ? 0 : 1));
+      });
+    }
+
+    /* ────────────────────────────────────────────
+       EYE TOGGLE
+    ──────────────────────────────────────────── */
+    function toggleEye(btn, inputId) {
+      const input = document.getElementById(inputId);
+      const isText = input.type === 'text';
+      input.type = isText ? 'password' : 'text';
+      btn.classList.toggle('revealed', !isText);
+    }
+
+
+    /* ────────────────────────────────────────────
+       TOAST HELPER
+    ──────────────────────────────────────────── */
+    let toastTimer;
+    function showToast(msg, type = '') {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'show ' + type;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { t.className = ''; }, 3000);
+    }
+
+    /* ────────────────────────────────────────────
+       BUTTON PLACEHOLDERS
+       (Wire up Firebase logic here later)
+    ──────────────────────────────────────────── */
+
+    // ── SIGN UP ──
+    document.getElementById('btn-signup-submit').addEventListener('click', () => {
+      const username = document.getElementById('su-username').value.trim();
+      const fullname = document.getElementById('su-fullname').value.trim();
+      const email = document.getElementById('su-email').value.trim();
+      const password = document.getElementById('su-password').value;
+      const confirm = document.getElementById('su-confirm').value;
+      const terms = document.getElementById('su-terms').checked;
+
+      // Basic client-side validation
+      if (!username || !fullname || !email || !password || !confirm) {
+        showToast('Please fill in all fields.', 'error'); return;
+      }
+      if (password !== confirm) {
+        showToast('Passwords do not match.', 'error'); return;
+      }
+      if (!terms) {
+        showToast('Please accept the terms.', 'error'); return;
+      }
+
+      // ── TODO: call Firebase createUserWithEmailAndPassword here ──
+      showToast('Account created! 🎉', 'success');
+    });
+
+    // ── SIGN IN ──
+    document.getElementById('btn-signin-submit').addEventListener('click', () => {
+      const email = document.getElementById('si-email').value.trim();
+      const password = document.getElementById('si-password').value;
+
+      if (!email || !password) {
+        showToast('Please enter your email and password.', 'error'); return;
+      }
+
+      // ── TODO: call Firebase signInWithEmailAndPassword here ──
+      showToast('Signed in successfully!', 'success');
+    });
+
+    // ── GOOGLE ──
+    document.getElementById('btn-google-signup').addEventListener('click', () => {
+      // TODO: Firebase Google sign-in (GoogleAuthProvider)
+    });
+    document.getElementById('btn-google-signin').addEventListener('click', () => {
+      // TODO: Firebase Google sign-in (GoogleAuthProvider)
+    });
+
+    // ── GITHUB ──
+    document.getElementById('btn-github-signup').addEventListener('click', () => {
+      // TODO: Firebase GitHub sign-in (GithubAuthProvider)
+    });
+    document.getElementById('btn-github-signin').addEventListener('click', () => {
+      // TODO: Firebase GitHub sign-in (GithubAuthProvider)
+    });
+
+    // ── FORGOT PASSWORD ──
+    document.getElementById('btn-forgot').addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('si-email').value.trim();
+      if (!email) { showToast('Enter your email first.', 'error'); return; }
+      // TODO: Firebase sendPasswordResetEmail here
+      showToast('Reset link sent to ' + email, 'success');
+    });
+  </script>
+</body>
+
+</html>

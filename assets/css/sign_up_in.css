@@ -498,39 +498,6 @@
    text-decoration: none;
  }
 
- /* ── TOAST (placeholder) ── */
- #toast {
-   position: fixed;
-   bottom: 2rem;
-   right: 2rem;
-   background: var(--surface);
-   border: 1px solid var(--border);
-   border-radius: 10px;
-   padding: .75rem 1.25rem;
-   font-size: .875rem;
-   color: var(--text);
-   transform: translateY(80px);
-   opacity: 0;
-   transition: all .35s cubic-bezier(.4, 0, .2, 1);
-   z-index: 999;
-   pointer-events: none;
- }
-
- #toast.show {
-   transform: translateY(0);
-   opacity: 1;
- }
-
- #toast.success {
-   border-color: var(--primary-color);
-   color: var(--primary-color);
- }
-
- #toast.error {
-   border-color: var(--error);
-   color: var(--error);
- }
-
  /* ── RESPONSIVE ── */
  @media (max-width: 860px) {
    .page {

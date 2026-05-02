@@ -146,19 +146,3 @@ confirmYes?.addEventListener("click", () => {
 confirmNo?.addEventListener("click", hidePopup);
 
 popupOverlay?.addEventListener("click", hidePopup);
-
-
-// -------------------------------------
-// THEME TOGGLER
-// -------------------------------------
-const themeToggle = document.querySelector('.theme-toggle');
-
-themeToggle.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    document.documentElement.classList.toggle('dark');
-
-    // Save preference
-    const isDark = document.documentElement.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});

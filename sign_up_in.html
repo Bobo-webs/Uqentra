@@ -22,7 +22,8 @@
   <!-- ===== Script ===== -->
   <script src="/assets/js/network-state.js"></script>
   <script src="/assets/js/toast.js"></script>
-  <script src="/assets/js/sign_up_in.js"></script>
+  <script type="module" src="/assets/js/firebase-init.js"></script>
+  <script type="module" src="/assets/js/sign_up_in.js"></script>
 </head>
 
 <body>
@@ -253,7 +254,8 @@
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;">
             <label
               style="display:flex;align-items:center;gap:.4rem;text-transform:none;letter-spacing:0;font-size:.83rem;color:var(--muted);cursor:pointer;">
-              <input type="checkbox" id="si-remember" style="accent-color:var(--primary-color);width:15px;height:15px;" />
+              <input type="checkbox" id="si-remember"
+                style="accent-color:var(--primary-color);width:15px;height:15px;" />
               Remember me
             </label>
             <div class="forgot"><a href="#" id="btn-forgot">Forgot password?</a></div>
@@ -303,78 +305,6 @@
       input.type = isText ? 'password' : 'text';
       btn.classList.toggle('revealed', !isText);
     }
-
-
-    /* ────────────────────────────────────────────
-       TOAST HELPER
-    ──────────────────────────────────────────── */
-    let toastTimer;
-    function showToast(msg, type = '') {
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.className = 'show ' + type;
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => { t.className = ''; }, 3000);
-    }
-
-    /* ────────────────────────────────────────────
-       BUTTON PLACEHOLDERS
-       (Wire up Firebase logic here later)
-    ──────────────────────────────────────────── */
-
-    // ── SIGN UP ──
-    document.getElementById('btn-signup-submit').addEventListener('click', () => {
-      const username = document.getElementById('su-username').value.trim();
-      const fullname = document.getElementById('su-fullname').value.trim();
-      const email = document.getElementById('su-email').value.trim();
-      const password = document.getElementById('su-password').value;
-      const confirm = document.getElementById('su-confirm').value;
-      const terms = document.getElementById('su-terms').checked;
-
-      // Basic client-side validation
-      if (!username || !fullname || !email || !password || !confirm) {
-        showToast('Please fill in all fields.', 'error'); return;
-      }
-      if (password !== confirm) {
-        showToast('Passwords do not match.', 'error'); return;
-      }
-      if (!terms) {
-        showToast('Please accept the terms.', 'error'); return;
-      }
-
-      // ── TODO: call Firebase createUserWithEmailAndPassword here ──
-      showToast('Account created! 🎉', 'success');
-    });
-
-    // ── SIGN IN ──
-    document.getElementById('btn-signin-submit').addEventListener('click', () => {
-      const email = document.getElementById('si-email').value.trim();
-      const password = document.getElementById('si-password').value;
-
-      if (!email || !password) {
-        showToast('Please enter your email and password.', 'error'); return;
-      }
-
-      // ── TODO: call Firebase signInWithEmailAndPassword here ──
-      showToast('Signed in successfully!', 'success');
-    });
-
-    // ── GOOGLE ──
-    document.getElementById('btn-google-signup').addEventListener('click', () => {
-      // TODO: Firebase Google sign-in (GoogleAuthProvider)
-    });
-    document.getElementById('btn-google-signin').addEventListener('click', () => {
-      // TODO: Firebase Google sign-in (GoogleAuthProvider)
-    });
-
-    // ── FORGOT PASSWORD ──
-    document.getElementById('btn-forgot').addEventListener('click', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('si-email').value.trim();
-      if (!email) { showToast('Enter your email first.', 'error'); return; }
-      // TODO: Firebase sendPasswordResetEmail here
-      showToast('Reset link sent to ' + email, 'success');
-    });
   </script>
 </body>
 

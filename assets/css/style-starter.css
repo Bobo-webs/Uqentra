@@ -21311,3 +21311,9 @@ tbody td {
 section {
     scroll-margin-top: 80px;
 }
+
+
+.single-contact-infos {
+    background-color: #f8f9fa53;
+    border: 1px solid #dee2e64c !important;
+}

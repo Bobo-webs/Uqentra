@@ -22,6 +22,9 @@
 
   <!-- ===== Script ===== -->
   <script src="/assets/js/network-state.js"></script>
+  <script src="/assets/js/toast.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="/assets/js/contact.js"></script>
 </head>
 
 <body>
@@ -128,56 +131,45 @@
       </div>
 
       <div class="w3l-contact-info">
-        <div class="row contact-infos">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-contact-infos">
-              <div class="icon-box">
-                <span class="fab fa-whatsapp"></span>
+        <div class="row justify-content-center g-4 contact-infos">
+
+          <div class="col-12 col-sm-5">
+            <div
+              class="single-contact-infos h-100 d-flex flex-column align-items-center text-center p-4 border rounded-3">
+              <div class="icon-box mb-3">
+                <span>📍</span>
               </div>
-              <div class="text-box">
-                <h3 class="mb-2">Whatsapp</h3>
-                <p>
-                  <a href="https://api.whatsapp.com/send/?phone=%2B16822720536&text&type=phone_number&app_absent=0"
-                    target="_blank" class="msg-me flex">+1 (682) 272-0536</a>
-                </p>
-              </div>
+              <h3 class="mb-2">Address</h3>
+              <p class="mb-0">525 Uni Ave, Palo Alto, CA 94301</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-            <div class="single-contact-infos">
-              <div class="icon-box">
-                <span class="fas">📍</span>
-              </div>
-              <div class="text-box">
-                <h3 class="mb-2">Address</h3>
-                <p>Uqentra, 85 Willow Road, Menlo Park, CA 94025.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-            <div class="single-contact-infos">
-              <div class="icon-box">
+
+          <div class="col-12 col-sm-5">
+            <div
+              class="single-contact-infos h-100 d-flex flex-column align-items-center text-center p-4 border rounded-3">
+              <div class="icon-box mb-3">
                 <span class="fas">✉️</span>
               </div>
-              <div class="text-box">
-                <h3 class="mb-2">Email</h3>
-                <p>
-                  <a href="mailto:uqentra@gmail.com">uqentra@gmail.com</a>
-                </p>
-              </div>
+              <h3 class="mb-2">Email</h3>
+              <p class="mb-0">
+                <a href="mailto:uqentra@gmail.com">uqentra@gmail.com</a>
+              </p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
   <!--/contact-map-->
-  <section class="w3l-contact-main" id="contact">
+  <section class="w3l-contact-main" id="contact" style="margin: 0 2rem;">
     <div class="map pt-lg-3">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3167.2678377516045!2d-122.167597!3d37.4543976!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb0055c7290b%3A0xefc72434a8785345!2sUqentra%20Crypto%20LLC!5e0!3m2!1sen!2sng!4v1729017879077!5m2!1sen!2sng"
-        allowfullscreen=""></iframe>
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101391.36851054354!2d-122.21775236659983!3d37.42575773345263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb07b9dba1c39%3A0xe1ff55235f576cf!2sPalo%20Alto%2C%20CA%2C%20USA!5e0!3m2!1sen!2sng!4v1777713181076!5m2!1sen!2sng"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </section>
 
@@ -187,7 +179,7 @@
       <div class="container py-lg-5">
         <div class="top-map">
           <div class="map-content-9">
-            <form action="https://formspree.io/f/mpwzqryd" method="POST">
+            <form id="contactForm" method="POST">
               <div class="form-top1">
                 <div class="w3header-section text-center">
                   <h6 class="title-subhny">Get In Touch</h6>

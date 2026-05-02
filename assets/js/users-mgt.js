@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </button>
                         </div>
                     </td>
-                    <td>${data.lastname || 'No data'}</td>
+                    <td>${data.fullname || 'No data'}</td>
                     <td>${data.email || 'No data'}</td>
                     <td>$${Number(data.balance || 0).toFixed(2)}</td>
                     <td>$${Number(data.deposits || 0).toFixed(2)}</td>
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const snap = await get(ref(db, `users/${uid}`));
             const data = snap.val() || {};
 
-            document.getElementById('editLastname').value = data.lastname || '';
+            document.getElementById('editFullname').value = data.fullname || '';
             document.getElementById('editBalance').value = data.balance || 0;
             document.getElementById('editDeposits').value = data.deposits || 0;
             document.getElementById('editWithdrawals').value = data.withdrawals || 0;
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showToast("Saving changes...", "info");
 
             const updates = {
-                lastname: document.getElementById('editLastname').value.trim() || null,
+                fullname: document.getElementById('editFullname').value.trim() || null,
                 balance: parseFloat(document.getElementById('editBalance').value) || 0,
                 deposits: parseFloat(document.getElementById('editDeposits').value) || 0,
                 withdrawals: parseFloat(document.getElementById('editWithdrawals').value) || 0,

@@ -102,10 +102,10 @@ async function displayUserData(uid) {
 
         const data = snapshot.val();
 
-        const firstname = (data.firstname || "User").toString().trim();
+        const username = (data.username || "User").toString().trim();
 
         const profileUsername = document.querySelector(".profile-trigger .username");
-        if (profileUsername) profileUsername.textContent = firstname;
+        if (profileUsername) profileUsername.textContent = username;
 
         console.log("User data displayed successfully");
 

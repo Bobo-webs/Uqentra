@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const userUid = userSnap.key;
                 const userData = userSnap.val() || {};
 
-                const lastname = userData.lastname || 'No data';
+                const fullname = userData.fullname || 'No data';
 
                 const subsRef = userSnap.child('allSubscriptions');
                 if (!subsRef.exists()) return;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     subsList.push({
                         userUid,
                         subId,
-                        lastname,
+                        fullname,
                         plan: sub.plan || 'free',
                         billing: sub.billing || 'N/A',
                         status: sub.status || 'active',
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </td>
-                    <td>${sub.lastname}</td>
+                    <td>${sub.fullname}</td>
                     <td>${sub.subId}</td>
                     <td>${sub.plan}</td>
                     <td>${sub.billing}</td>

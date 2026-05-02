@@ -7,9 +7,9 @@
  }
 
  :root {
-   --brand: #32cd32;
-   --brand-dim: #1f8c1f;
-   --brand-glow: rgba(50, 205, 50, .18);
+   --primary-color: #32cd32;
+   --primary-color-dim: #1f8c1f;
+   --primary-color-glow: rgba(50, 205, 50, .18);
    --bg: #0a0a0a;
    --surface: #111111;
    --border: #1e1e1e;
@@ -30,14 +30,13 @@
    -webkit-font-smoothing: antialiased;
  }
 
- /* ── GRID LAYOUT ── */
  .page {
    min-height: 100vh;
    display: grid;
    grid-template-columns: 1fr 1fr;
  }
 
- /* ── LEFT PANEL (decorative) ── */
+ /* ── LEFT PANEL ── */
  .panel-left {
    position: relative;
    overflow: hidden;
@@ -107,9 +106,9 @@
    width: 8px;
    height: 8px;
    border-radius: 50%;
-   background: var(--brand);
+   background: var(--primary-color);
    transform: translateX(-50%);
-   box-shadow: 0 0 12px var(--brand);
+   box-shadow: 0 0 12px var(--primary-color);
  }
 
  @keyframes spin {
@@ -133,7 +132,7 @@
  }
 
  .panel-tagline span {
-   color: var(--brand);
+   color: var(--primary-color);
  }
 
  .panel-sub {
@@ -158,7 +157,7 @@
  }
 
  .dot.active {
-   background: var(--brand);
+   background: var(--primary-color);
    transform: scale(1.3);
  }
 
@@ -178,7 +177,6 @@
    max-width: 420px;
  }
 
- /* ── BRAND HEADER ── */
  .brand {
    display: flex;
    align-items: center;
@@ -203,7 +201,7 @@
  .brand-name {
    font-size: 1.5rem;
    font-weight: 800;
-   color: var(--brand);
+   color: var(--primary-color);
  }
 
  /* ── TAB TOGGLE ── */
@@ -232,12 +230,11 @@
  }
 
  .tab-btn.active {
-   background: var(--brand);
+   background: var(--primary-color);
    color: #0a0a0a;
    font-weight: 700;
  }
 
- /* ── FORM HEADING ── */
  .form-heading {
    margin-bottom: 1.75rem;
  }
@@ -255,7 +252,6 @@
    color: var(--muted);
  }
 
- /* ── PANELS ── */
  .auth-view {
    display: none;
  }
@@ -264,7 +260,6 @@
    display: block;
  }
 
- /* ── FIELD ── */
  .field {
    margin-bottom: 1.15rem;
  }
@@ -304,16 +299,15 @@
  }
 
  .input-wrap input:focus {
-   border-color: var(--brand-focus, var(--border-focus));
+   border-color: var(--primary-color-focus, var(--border-focus));
    background: #141414;
-   box-shadow: 0 0 0 3px var(--brand-glow);
+   box-shadow: 0 0 0 3px var(--primary-color-glow);
  }
 
  .input-wrap input.has-icon {
    padding-right: 2.8rem;
  }
 
- /* eye toggle */
  .eye-btn {
    position: absolute;
    right: .85rem;
@@ -329,7 +323,7 @@
  }
 
  .eye-btn:hover {
-   color: var(--brand);
+   color: var(--primary-color);
  }
 
  .eye-btn svg {
@@ -353,14 +347,13 @@
    display: block;
  }
 
- /* ── SUBMIT ── */
  .btn-submit {
    width: 100%;
    margin-top: .5rem;
    padding: .9rem 1rem;
    border: none;
    border-radius: var(--radius);
-   background: var(--brand);
+   background: var(--primary-color);
    color: #0a0a0a;
    font-family: 'Syne', sans-serif;
    font-size: 1rem;
@@ -389,7 +382,6 @@
    transform: translateY(0);
  }
 
- /* ── DIVIDER ── */
  .divider {
    display: flex;
    align-items: center;
@@ -407,7 +399,6 @@
    background: var(--border);
  }
 
- /* ── FOOTER LINK ── */
  .form-footer {
    text-align: center;
    margin-top: 1.25rem;
@@ -416,7 +407,7 @@
  }
 
  .form-footer a {
-   color: var(--brand);
+   color: var(--primary-color);
    text-decoration: none;
    font-weight: 500;
    cursor: pointer;
@@ -428,9 +419,8 @@
 
  /* ── SOCIAL ── */
  .social-row {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: .75rem;
+   display: flex;
+   justify-content: center;
    margin-bottom: .25rem;
  }
 
@@ -452,7 +442,7 @@
  }
 
  .btn-social:hover {
-   border-color: var(--brand);
+   border-color: var(--primary-color);
    background: #141414;
  }
 
@@ -462,7 +452,6 @@
    flex-shrink: 0;
  }
 
- /* ── FORGOT ── */
  .forgot {
    display: flex;
    justify-content: flex-start;
@@ -472,7 +461,7 @@
 
  .forgot a {
    font-size: .8rem;
-   color: var(--brand);
+   color: var(--primary-color);
    text-decoration: none;
    cursor: pointer;
  }
@@ -481,7 +470,6 @@
    text-decoration: underline;
  }
 
- /* ── CHECKBOX ── */
  .checkbox-row {
    display: flex;
    align-items: flex-start;
@@ -493,7 +481,7 @@
  .checkbox-row input[type="checkbox"] {
    width: 16px;
    height: 16px;
-   accent-color: var(--brand);
+   accent-color: var(--primary-color);
    margin-top: 2px;
    flex-shrink: 0;
    cursor: pointer;
@@ -506,7 +494,7 @@
  }
 
  .checkbox-row a {
-   color: var(--brand);
+   color: var(--primary-color);
    text-decoration: none;
  }
 
@@ -534,8 +522,8 @@
  }
 
  #toast.success {
-   border-color: var(--brand);
-   color: var(--brand);
+   border-color: var(--primary-color);
+   color: var(--primary-color);
  }
 
  #toast.error {

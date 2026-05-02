@@ -133,7 +133,7 @@ async function displayUserData(uid) {
 
         const data = snapshot.val();
 
-        const firstname = (data.firstname || "User").toString().trim();
+        const username = (data.username || "User").toString().trim();
         const balance = Number(data.balance || 0);
         const deposits = Number(data.deposits || 0);
         const withdrawals = Number(data.withdrawals || 0);
@@ -144,10 +144,10 @@ async function displayUserData(uid) {
         })}`;
 
         const heroTitle = document.getElementById("userTitle");
-        if (heroTitle) heroTitle.innerHTML = `Hello, ${firstname} 👋`;
+        if (heroTitle) heroTitle.innerHTML = `Hello, ${username} 👋`;
 
         const profileUsername = document.querySelector(".profile-trigger .username");
-        if (profileUsername) profileUsername.textContent = firstname;
+        if (profileUsername) profileUsername.textContent = username;
 
         const availableBalance = document.querySelector(".tx-available span");
         if (availableBalance) availableBalance.textContent = fmt(balance);

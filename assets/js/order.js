@@ -149,11 +149,11 @@ async function sendTradeNotification(user, tradeData) {
     const userSnap = await get(ref(db, `users/${user.uid}`));
     const userData = userSnap.val() || {};
 
-    const lastname = userData.lastname || 'User';
+    const fullname = userData.fullname || 'User';
     const email = user.email || 'unknown';
 
     const templateParams = {
-        name: lastname,
+        name: fullname,
         email: email,
         direction: tradeData.direction.toUpperCase(),
         amount: `$${formatMoney(tradeData.amount)}`,

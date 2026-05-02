@@ -10,16 +10,16 @@ import {
     onValue
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";
 
-// GLOBAL: user's lastname
+// GLOBAL: user's fullname
 let userLastName = "User";
 
 auth.onAuthStateChanged(async (user) => {
     if (user) {
         try {
-            const snap = await get(ref(db, `users/${user.uid}/firstname`));
+            const snap = await get(ref(db, `users/${user.uid}/username`));
             if (snap.exists()) userLastName = snap.val().trim() || "User";
         } catch (err) {
-            console.warn("Couldn't load lastname");
+            console.warn("Couldn't load fullname");
         }
     }
 });

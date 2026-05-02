@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         onValue(userRef, (snap) => {
             const data = snap.val();
             if (data) {
-                usernameInput.value = data.firstname || '';
-                fullNameInput.value = data.lastname || '';
+                usernameInput.value = data.username || '';
+                fullNameInput.value = data.fullname || '';
                 emailInput.value = data.email || 'No email';
 
-                profileUsername.textContent = data.firstname || 'User';
+                profileUsername.textContent = data.username || 'User';
                 profileEmail.textContent = data.email || 'No email';
 
                 console.log("%cPROFILE DATA LOADED", "color:#00ff9d;font-weight:bold;");
@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const user = auth.currentUser;
         if (!user) return;
 
-        const firstname = usernameInput.value.trim();
-        const lastname = fullNameInput.value.trim();
+        const username = usernameInput.value.trim();
+        const fullname = fullNameInput.value.trim();
 
-        if (!firstname || !lastname) {
+        if (!username || !fullname) {
             showToast("Please fill all fields", "error");
             return;
         }
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             showToast("Saving profile...", "info");
 
             await update(dbRef(db, `users/${user.uid}`), {
-                firstname: firstname,
-                lastname: lastname
+                username: username,
+                fullname: fullname
             });
 
             showToast("Profile updated!", "success");

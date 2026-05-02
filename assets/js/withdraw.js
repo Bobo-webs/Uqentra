@@ -8,7 +8,7 @@ let userFullName = "User";
 auth.onAuthStateChanged(async (user) => {
     if (user) {
         try {
-            const snap = await get(ref(db, `users/${user.uid}/firstname`));
+            const snap = await get(ref(db, `users/${user.uid}/username`));
             if (snap.exists()) {
                 userFullName = snap.val().trim() || "User";
             }

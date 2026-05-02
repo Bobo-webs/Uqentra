@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const userUid = userSnap.key;
                 const userData = userSnap.val() || {};
 
-                const lastname = userData.lastname || 'No data';
+                const fullname = userData.fullname || 'No data';
                 const email = userData.email || 'No data';
 
                 const openOrdersRef = userSnap.child('openOrders');
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tradesList.push({
                         userUid,
                         tradeId,
-                        lastname,
+                        fullname,
                         email,
                         amount: trade.amount || 0,
                         openedAt: trade.openedAt || 0,
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </button>
                         </div>
                     </td>
-                    <td>${trade.lastname}</td>
+                    <td>${trade.fullname}</td>
                     <td>${trade.tradeId}</td>
                     <td>
                         <span class="direction ${trade.direction}">${trade.direction.toUpperCase()}</span>

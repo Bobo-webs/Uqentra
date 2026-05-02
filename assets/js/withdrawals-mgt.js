@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const userUid = userSnap.key;
                 const userData = userSnap.val() || {};
 
-                const lastname = userData.lastname || 'No data';
+                const fullname = userData.fullname || 'No data';
                 const email = userData.email || 'No data';
 
                 const withdrawalsRef = userSnap.child('allWithdrawals');
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     withdrawalsList.push({
                         userUid,
                         withdrawalId,
-                        lastname,
+                        fullname,
                         email,
                         amount: withdrawal.amount || 0,
                         crypto: withdrawal.crypto || 'No data',
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </button>
                         </div>
                     </td>
-                    <td>${w.lastname}</td>
+                    <td>${w.fullname}</td>
                     <td>${formattedDate}</td>
                     <td>${w.withdrawalId}</td>
                     <td><span class="deposits-status ${w.status}">${w.status}</span></td>

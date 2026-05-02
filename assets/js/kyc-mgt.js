@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             kycList.forEach(async (kyc) => {
                 const userSnap = await get(ref(db, `users/${kyc.userUid}`));
                 const userData = userSnap.val() || {};
-                const lastname = userData.lastname || 'No data';
+                const fullname = userData.fullname || 'No data';
 
                 let formattedDate = 'No data';
                 if (kyc.timestamp) {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </button>
                         </div>
                     </td>
-                    <td>${lastname}</td>
+                    <td>${fullname}</td>
                     <td>${formattedDate}</td>
                     <td><span class="deposits-status ${kyc.status}">${kyc.status}</span></td>
                     <td>${kyc.documentType}</td>

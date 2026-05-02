@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crypto Market - Investify</title>
+
+  <!-- ======== Styling ======= -->
+  <link rel="icon" href="/assets/images/logo-icon.jpg" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ======== Script ======= -->
+  <script src="/assets/js/network-state.js"></script>
+  <script src="/assets/js/toast.js"></script>
+  <script type="module" src="/assets/js/firebase-init.js"></script>
+  <script type="module" src="/assets/js/dashboard.js"></script>
+  <script type="module" src="/assets/js/order.js"></script>
+  <script src="/assets/js/contact-modal.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+  <!-- GLOBAL LOADING -->
+  <div id="loading-overlay">
+    <div class="spinner"></div>
+    <p></p>
+  </div>
+
+  <!-- CONTACT MODAL -->
+  <!-- <div class="contact-overlay" id="contactOverlay">
+    <div class="contact-modal">
+      <div class="contact-header">
+        <h3>Contact Us</h3>
+        <button class="contact-close" id="closeContact">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="contactName">Your Name</label>
+          <input type="text" id="contactName" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactEmail">Email Address</label>
+          <input type="email" id="contactEmail" placeholder="john@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactSubject">Subject</label>
+          <input type="text" id="contactSubject" placeholder="How can we help?" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" rows="5" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div> -->
+
+  <div class="app" id="appRoot">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="logo-mark">
+          <img src="/assets/images/logo.png" alt="">
+        </div>
+        <div>
+          <h1>Investify</h1>
+          <span>Trader's Dashboard</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="section-title">Markets</div>
+        <a href="#" class="active">
+          <span class="icon"><i class="fa-brands fa-bitcoin"></i></span>
+          <span>Crypto</span>
+          <!-- <span class="badge">5</span> -->
+        </a>
+
+        <a href="stock.html">
+          <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+          <span>Stocks</span>
+        </a>
+
+        <a href="indices.html">
+          <span class="icon"><i class="fa-solid fa-chart-bar"></i></span>
+          <span>Indices</span>
+        </a>
+
+        <a href="#">
+          <span class="icon"><i class="fa-solid fa-dollar-sign"></i></span>
+          <span>Forex</span>
+          <span class="pro">COMING <br> SOON</span>
+        </a>
+
+        <a href="#">
+          <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+          <span>CFD</span>
+          <span class="pro">COMING <br> SOON</span>
+        </a>
+
+        <div class="section-title">TRANSACTIONS</div>
+        <a href="deposit.html">
+          <span class="icon"><i class="fa-solid fa-circle-down"></i></span>
+          <span>Deposit</span>
+        </a>
+
+        <a href="withdraw.html">
+          <span class="icon"><i class="fa-solid fa-circle-up"></i></span>
+          <span>Withdraw</span>
+        </a>
+
+        <a href="transactions.html">
+          <span class="icon"><i class="fa-regular fa-rectangle-list"></i></span>
+          <span>Transactions</span>
+        </a>
+
+        <div class="section-title">USER SETTINGS</div>
+        <a href="kyc.html">
+          <span class="icon"><i class="fa-solid fa-id-card"></i></span>
+          <span>Kyc Verification</span>
+        </a>
+
+        <a href="authentications.html">
+          <span class="icon"><i class="fa-solid fa-lock"></i></span>
+          <span>Authentications</span>
+        </a>
+
+        <a href="profile.html">
+          <span class="icon"><i class="fa-solid fa-user"></i></span>
+          <span>User Profile</span>
+        </a>
+
+        <!-- SUBSCRIPTION PLAN UI -->
+        <div class="sub-plan-container" id="subPlanContainer">
+          <div class="sub-plan-header">
+            <i class="fa-solid fa-crown sub-plan-icon"></i>
+            <span class="sub-plan-name" id="subPlanName">Basic Plan</span>
+          </div>
+          <a href="plan.html" class="sub-plan-upgrade-btn" id="subPlanUpgrade">View Plans</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <div class="topbar">
+        <div class="left-controls">
+          <button class="home-icon" id="menuToggle" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars-staggered "></i>
+          </button>
+        </div>
+
+        <div class="topbar-right">
+          <a href="contact.html" id="openContact" class="home-icon contact-btn"><i class="fa-solid fa-headset"></i></a>
+          <a href="index.html" class="home-icon back-home"><i class="fa-solid fa-house"></i></a>
+          <a href="#" class="home-icon theme-toggle">
+            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
+          </a>
+
+          <div class="profile" id="profileMenu">
+            <div class="profile-trigger">
+              <div class="avatar"><img src="/assets/images/avatar.png" alt="avatar"></div>
+              <span class="username">-</span>
+              <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+
+            <div class="dropdown">
+              <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+              <a href="kyc.html"><i class="fa-solid fa-id-card"></i> KYC Verification</a>
+              <a href="authentications.html"><i class="fa-solid fa-lock"></i> Change Password</a>
+              <a href="authentications.html"><i class="fa-solid fa-gear"></i> Change Email</a>
+              <hr>
+              <a id="logoutButton" class="logout logoutBtn"><i class="fa-solid fa-power-off"></i>
+                Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="hero">
+        <div class="hero-first">
+          <div id="userTitle" class="title">Hello, xxx! 👋</div>
+          <div class="sub">xxxx</div>
+          <div class="hero-btns">
+            <a class="deposit-btn" href="deposit.html">Deposit<i class="fa-regular fa-circle-down"></i></a>
+            <a class="trade-btn" href="#txWidget">Trade<i class="fa-solid fa-arrows-rotate"></i></a>
+          </div>
+        </div>
+        <div class="illustration">
+          <img src="/assets/images/crypto-trader.png" alt="">
+        </div>
+      </section>
+
+      <!-- Crypto Container: has NO external margin/padding so safe to drop into templates -->
+      <div class="cards">
+        <div style="padding-top: 0px !important;" class="card">
+          <div class="searchBox">
+            <div class="searchWrapper">
+              <i class="fas fa-search searchIcon"></i>
+              <input type="search" name="search" id="searchAsset" placeholder="Search assets...">
+            </div>
+          </div>
+          <div class="live-charts-tip">
+            <i class="fa-solid fa-chart-line"></i>
+            Click Assets to view their live charts
+          </div>
+          <div id="crypto-list" aria-live="polite"></div>
+        </div>
+        <div class="card">
+          <section id="txWidget" class="tx-widget">
+            <div class="tx-top">
+              <div class="tx-left">
+                <label for="tx-asset" class="tx-label" style="margin-top: 0;">Asset</label>
+                <select id="tx-asset" class="tx-select" aria-label="Choose asset"></select>
+
+                <label for="tx-tf" class="tx-label">Timeframe</label>
+                <select id="tx-tf" class="tx-select" aria-label="Choose timeframe">
+                  <option value="30">30 sec</option>
+                  <option value="60">60 sec</option>
+                  <option value="150">150 sec</option>
+                  <option value="300">5 min</option>
+                  <option value="1800">30 min</option>
+                  <option value="3600">1 hour</option>
+                </select>
+
+                <label for="tx-amount-quick" class="tx-label">Amount</label>
+                <div style="display:flex;gap:8px">
+                  <select id="tx-amount-quick" class="tx-select" style="flex:0 0 38%">
+                    <option value="">Quick</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="5000">5000</option>
+                  </select>
+                  <input id="tx-amount" class="tx-input" placeholder="Minimum of $20" style="flex:1" />
+                </div>
+                <input id="tx-market" value="crypto" disabled style="display: none;" />
+
+                <div class="tx-available" id="tx-balance">Available: <span>XXXX</span> USD</div>
+
+                <div class="tx-actions">
+                  <button id="tx-buy" type="submit" class="tx-btn tx-buy">Buy</button>
+                  <button id="tx-sell" type="submit" class="tx-btn tx-sell">Sell</button>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="tx-h">
+              Open Trade(s)
+              <a href="transactions.html">View all trades<i class="fa-solid fa-angles-right"></i></a>
+            </h4>
+            <!-- Orders -->
+            <div id="tx-orders" class="tx-orders-modern">
+            </div>
+
+
+            <div id="tx-closed" class="tx-orders-modern" style="margin-top: 32px;">
+            </div>
+
+          </section>
+
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="chartModal" class="cv-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="cv-modal-box">
+          <button id="closeModal" class="cv-close" aria-label="Close chart">×</button>
+          <div id="tvChart" style="height: 100%; width: 100%;"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- =========== Auth Popups =========== -->
+  <div class="popup-overlay" id="popupOverlay"></div>
+  <div id="confirmationPopup" class="popup">
+    <div class="popup-content">
+      <h3>Logout</h3>
+      <span id="confirmationMessage">Are you sure you want to log out?</span>
+      <div class="popup-buttons">
+        <button id="confirmNo" class="confirm-button">Cancel</button>
+        <button id="confirmYes" class="confirm-button">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------- Live Data ------- -->
+  <script src="https://s3.tradingview.com/tv.js"></script>
+  <script src="/assets/js/crypto.js"></script>
+  <script>
+    (function () {
+      const menuBtn = document.getElementById('menuToggle');
+      const sidebar = document.getElementById('sidebar');
+      const appRoot = document.getElementById('appRoot');
+
+      function openSidebar() {
+        sidebar.classList.add('open');
+        appRoot.classList.add('overlay');
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        appRoot.classList.remove('overlay');
+      }
+
+      menuBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (sidebar.classList.contains('open')) closeSidebar();
+        else openSidebar();
+      });
+
+      document.addEventListener('click', function (ev) {
+        if (window.innerWidth <= 1200 && sidebar.classList.contains('open')) {
+          const target = ev.target;
+          if (!sidebar.contains(target) && !menuBtn.contains(target)) {
+            closeSidebar();
+          }
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeSidebar();
+      });
+    })();
+
+
+    // Profile menu toggle
+    const profileMenu = document.getElementById('profileMenu');
+    profileMenu.querySelector('.profile-trigger').addEventListener('click', () => {
+      profileMenu.classList.toggle('active');
+    });
+  </script>
+
+  <script type="module">
+    import { app, auth, db } from "/assets/js/firebase-init.js";
+    import {
+      ref,
+      get
+    } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";
+    import {
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+    async function displayUserData(uid) {
+      try {
+        const snapshot = await get(ref(db, `users/${uid}`));
+        if (!snapshot.exists()) return;
+
+        const data = snapshot.val();
+        const cryptoSignal =
+          (data.cryptoSignal && String(data.cryptoSignal).trim()) ||
+          "No Available Crypto Signal";
+
+        // UPDATE SIGNAL
+        const userSignal = document.querySelector(".hero-first .sub");
+        if (userSignal) {
+          userSignal.textContent = cryptoSignal;
+        }
+
+      } catch (error) {
+        console.error("Error retrieving user data:", error);
+      }
+    }
+
+    // Auth Check
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        displayUserData(user.uid);
+      } else {
+        console.warn("No user logged in.");
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>

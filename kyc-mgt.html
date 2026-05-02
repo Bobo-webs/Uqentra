@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KYC Management - Investify</title>
+
+    <!-- ======== Styling ======= -->
+    <link rel="icon" href="/assets/images/logo-icon.jpg" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ======== Script ======= -->
+    <script src="/assets/js/network-state.js"></script>
+    <script src="/assets/js/toast.js"></script>
+    <script type="module" src="/assets/js/firebase-init.js"></script>
+    <script type="module" src="/assets/js/admin.js"></script>
+    <script type="module" src="/assets/js/kyc-mgt.js"></script>
+    <script src="/assets/js/admin-search.js"></script>
+</head>
+
+<body>
+    <!-- GLOBAL LOADING -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p></p>
+    </div>
+
+    <div class="app" id="appRoot">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="logo-mark">
+                    <img src="/assets/images/logo.png" alt="">
+                </div>
+                <div>
+                    <h1>Investify</h1>
+                    <span>Admin's Dashboard</span>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <div class="section-title">USER SETTINGS</div>
+                <a href="admin.html">
+                    <span class="icon"><i class="fa-solid fa-users-gear"></i></span>
+                    <span>Users</span>
+                    <!-- <span class="badge">5</span> -->
+                </a>
+
+                <a href="deposits-mgt.html">
+                    <span class="icon"><i class="fa-solid fa-circle-down"></i></span>
+                    <span>Deposits</span>
+                </a>
+
+                <a href="trades-mgt.html">
+                    <span class="icon"><i class="fa-solid fa-refresh"></i>
+                    </span>
+                    <span>Trades</span>
+                </a>
+
+                <a href="withdrawals-mgt.html">
+                    <span class="icon"><i class="fa-solid fa-circle-up"></i></span>
+                    <span>Withdrawals</span>
+                </a>
+
+                <a class="active" href="#">
+                    <span class="icon"><i class="fa-solid fa-user-check"></i></span>
+                    <span>Kyc Review</span>
+                </a>
+
+                <a href="subs-mgt.html">
+                    <span class="icon"><i class="fa-solid fa-repeat"></i>
+                    </span>
+                    <span>Subscriptions</span>
+                </a>
+
+
+                <div class="section-title">ADMIN SETTINGS</div>
+                <a href="auth-admin.html">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <span>Authentications</span>
+                </a>
+
+                <a href="admin-profile.html">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span>Admin Profile</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <div class="topbar">
+                <div class="left-controls">
+                    <button class="home-icon" id="menuToggle" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars-staggered "></i>
+                    </button>
+
+
+                </div>
+
+                <div class="topbar-right">
+                    <a class="home-icon" id="adminSearchBtn"><i class="fa-solid fa-search"></i></a>
+                    <a href="index.html" class="home-icon back-home"><i class="fa-solid fa-house"></i></a>
+                    <a href="#" class="home-icon theme-toggle">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </a>
+
+                    <div class="profile" id="profileMenu">
+                        <div class="profile-trigger">
+                            <div class="avatar"><img src="/assets/images/avatar.png" alt="avatar"></div>
+                            <span class="username">-</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </div>
+
+                        <div class="dropdown">
+                            <a href="admin-profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                            <a href="auth-admin.html"><i class="fa-solid fa-lock"></i> Change Password</a>
+                            <a href="auth-admin.html"><i class="fa-solid fa-gear"></i> Change Email</a>
+                            <hr>
+                            <a id="logoutButton" class="logout logoutBtn"><i class="fa-solid fa-power-off"></i>
+                                Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- GLOBAL SEARCH TOGGLE -->
+            <div class="admin-search-toggle">
+                <input type="text" class="admin-search-input" id="adminSearchInput" placeholder="Search...">
+            </div>
+
+            <!-- ADMIN KYC REVIEW TABLE -->
+            <div class="admin-users-container card">
+                <table class="admin-users-table" id="adminKycTable">
+                    <thead>
+                        <tr>
+                            <th>Actions</th>
+                            <th>User</th>
+                            <th>Submission Time</th>
+                            <th>Status</th>
+                            <th>DocType</th>
+                            <th>ID Front</th>
+                            <th>ID Back</th>
+                            <th>Full Name</th>
+                            <th>DoB</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminKycBody">
+                        <!-- DB data populates here -->
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- DELETE CONFIRM POPUP -->
+            <div class="admin-popup-overlay" id="kycDeleteOverlay">
+                <div class="admin-popup">
+                    <h3>Are you sure you want to delete this KYC?</h3>
+                    <p>This action cannot be undone.</p>
+                    <div class="admin-popup-buttons">
+                        <button class="admin-btn admin-btn-secondary" id="kycDeleteCancel">Back</button>
+                        <button class="admin-btn admin-btn-danger" id="kycDeleteConfirm">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDIT MODAL -->
+            <div class="admin-modal-overlay" id="kycEditOverlay">
+                <div class="admin-edit-modal">
+                    <div class="admin-modal-header">
+                        <button class="admin-modal-close" id="closeKycModal"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form class="admin-edit-form" id="adminKycForm">
+                        <label for="kycUid">User ID</label>
+                        <input type="text" id="kycUid" disabled>
+
+                        <div class="editGroup">
+                            <div>
+                                <label for="kycFullName">Kyc Full Name</label>
+                                <input type="text" id="kycFullName" disabled>
+                            </div>
+                            <div>
+                                <label for="kycStatus">Status</label>
+                                <select id="kycStatus">
+                                    <option value="pending">Pending</option>
+                                    <option value="success">Success</option>
+                                    <option value="failed">Failed</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="admin-btn admin-btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- IMAGE VIEW MODAL -->
+            <div class="admin-image-modal-overlay" id="imageViewOverlay">
+                <div class="admin-modal-header">
+                    <button class="admin-modal-close" id="closeImageModal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="admin-image-modal">
+                    <img id="imageView" src="" alt="Document Image">
+                </div>
+            </div>
+
+
+            <!--  -->
+        </main>
+    </div>
+
+    <!-- =========== Auth Popups =========== -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div id="confirmationPopup" class="popup">
+        <div class="popup-content">
+            <h3>Logout</h3>
+            <span id="confirmationMessage">Are you sure you want to log out?</span>
+            <div class="popup-buttons">
+                <button id="confirmNo" class="confirm-button">Cancel</button>
+                <button id="confirmYes" class="confirm-button">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLOSE IMAGE MODAL -->
+    <script>
+        document.body.addEventListener('click', (e) => {
+            if (e.target.closest('#closeKycModal')) {
+                document.getElementById('kycEditOverlay').classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- CLOSE EDIT MODAL -->
+    <script>
+        document.body.addEventListener('click', (e) => {
+            if (e.target.closest('#closeImageModal')) {
+                document.getElementById('imageViewOverlay').classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- SIDEBAR TOGGLE -->
+    <script>
+        (function () {
+            const menuBtn = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const appRoot = document.getElementById('appRoot');
+
+            function openSidebar() {
+                sidebar.classList.add('open');
+                appRoot.classList.add('overlay');
+            }
+            function closeSidebar() {
+                sidebar.classList.remove('open');
+                appRoot.classList.remove('overlay');
+            }
+
+            menuBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (sidebar.classList.contains('open')) closeSidebar();
+                else openSidebar();
+            });
+
+            document.addEventListener('click', function (ev) {
+                if (window.innerWidth <= 1200 && sidebar.classList.contains('open')) {
+                    const target = ev.target;
+                    if (!sidebar.contains(target) && !menuBtn.contains(target)) {
+                        closeSidebar();
+                    }
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeSidebar();
+            });
+        })();
+
+
+        // Profile menu toggle
+        const profileMenu = document.getElementById('profileMenu');
+        profileMenu.querySelector('.profile-trigger').addEventListener('click', () => {
+            profileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

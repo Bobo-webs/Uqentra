@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta property="og:title" content="Uqentra" />
+  <meta property="og:description"
+    content="Founded to provide a secure, user-friendly, and diversified trading ecosystem for individuals and institutions" />
+  <meta property="og:image" content="https://uqentra.vercel.app/assets/images/logo-icon.jpg" />
+  <meta property="og:url" content="https://uqentra.vercel.app" />
+  <title>Forgot Password — Uqentra</title>
+
+  <!-- Links -->
+  <link rel="icon" href="./assets/images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="/assets/css/forgot.css" />
+
+  <!-- ===== Script ===== -->
+  <script src="/assets/js/network-state.js"></script>
+  <script src="/assets/js/toast.js"></script>
+  <script type="module" src="/assets/js/firebase-init.js"></script>
+  <script type="module" src="/assets/js/forgot.js"></script>
+</head>
+
+<body>
+
+  <div class="page">
+    <div class="form-shell">
+
+      <!-- BRAND -->
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="/assets/images/logo.png" alt="logo">
+        </div>
+        <span class="brand-name">qentra</span>
+      </div>
+
+      <!-- ══ FORM VIEW ══ -->
+      <div id="form-view">
+
+        <div class="lock-wrap">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+        </div>
+
+        <div class="form-heading">
+          <h1>Forgot password?</h1>
+          <p>No worries. Enter the email tied to your account and we'll send you reset instructions.</p>
+        </div>
+
+        <div class="field" id="email-field">
+          <label for="fp-email">Email Address</label>
+          <div class="input-wrap">
+            <input type="email" id="fp-email" placeholder="john@example.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <button class="btn-submit" id="btn-reset" type="button">
+          Send Reset Instructions
+        </button>
+
+        <a class="back-link" href="sign_up_in.html#signin">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          Back to Sign In
+        </a>
+
+      </div>
+
+      <!-- ══ SUCCESS VIEW ══ -->
+      <div class="success-state" id="success-view">
+
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 12.5 L9 17.5 L20 7" />
+          </svg>
+        </div>
+
+        <p class="success-title">Check your inbox</p>
+        <p class="success-msg">
+          If we find an eligible account associated with that address, we will send an email to the address containing
+          further instructions to recover your password. If you don't see it in your inbox, please check your
+          <strong style="color:#fff;font-weight:600;">spam or junk folder</strong>.
+        </p>
+
+        <div class="resend-row">
+          Didn't receive it?
+          <button class="resend-btn" id="btn-resend" type="button">Resend email</button>
+          <span id="resend-timer"></span>
+        </div>
+
+        <a class="back-link" href="sign_up_in.html#signin">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          Back to Sign In
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -36,11 +36,11 @@ function sendMail(amount, cryptoValue, cryptoText) {
         crypto: cryptoValue,
 
         // Sends to both user and admin
-        to_email: `${user.email}, investify.traders@gmail.com`,
+        to_email: `${user.email}, uqentra@gmail.com`,
         to_name: `${userLastName}, User`
     };
 
-    emailjs.send("service_o8fin53", "template_plo6qzw", params)
+    emailjs.send("service_yyuiz6x", "template_ojjjz5s", params)
         .then(() => console.log("Email sent to USER + ADMIN →", amount, cryptoText))
         .catch(err => console.error("Email failed:", err));
 }

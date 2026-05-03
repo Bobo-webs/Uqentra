@@ -1,4 +1,4 @@
-// WITHDRAWAL.JS
+//  WITHDRAWAL.JS
 
 import { auth, db } from "/assets/js/firebase-init.js";
 import { ref, push, set, get, update } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";
@@ -34,11 +34,11 @@ function sendWithdrawalMail(amount, cryptoValue, walletAddress) {
         withdraw_amount: amount,
         crypto_type: cryptoText,
         address: walletAddress,
-        to_email: `${user.email}, investify.traders@gmail.com`,
+        to_email: `${user.email}, uqentra@gmail.com`,
         to_name: `${userFullName}, Admin`
     };
 
-    return emailjs.send("service_o8fin53", "template_vmbmklb", params)
+    return emailjs.send("service_yyuiz6x", "template_94h626y", params)
         .then(() => console.log("Withdrawal email sent"))
         .catch(err => console.error("Email failed:", err));
 }

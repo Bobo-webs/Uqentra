@@ -44,13 +44,13 @@
       </div>
 
       <div class="panel-left-content">
-        <p class="panel-tagline">Your vision,<br><span>amplified.</span></p>
-        <p class="panel-sub">Join thousands building something extraordinary. Sign up in seconds and start creating
-          today.</p>
+        <p class="panel-tagline">Your profits,<br><span>amplified.</span></p>
+        <p class="panel-sub">Join thousands of traders mastering the markets. Open your account in seconds and start
+          executing your strategy today.
+        </p>
         <div class="dots">
           <div class="dot active" id="dot-0"></div>
           <div class="dot" id="dot-1"></div>
-          <div class="dot" id="dot-2"></div>
         </div>
       </div>
     </div>
@@ -178,7 +178,8 @@
           <!-- Terms -->
           <div class="checkbox-row">
             <input type="checkbox" id="su-terms" />
-            <span>I agree to the <a href="policies.html" tabindex="-1">Terms of Service</a> and <a href="policies.html" tabindex="-1">Privacy
+            <span>I agree to the <a href="policies.html" tabindex="-1">Terms of Service</a> and <a href="policies.html"
+                tabindex="-1">Privacy
                 Policy</a></span>
           </div>
 
@@ -258,7 +259,7 @@
                 style="accent-color:var(--primary-color);width:15px;height:15px;" />
               Remember me
             </label>
-            <div class="forgot"><a href="#" id="btn-forgot">Forgot password?</a></div>
+            <div class="forgot"><a href="forgot.html" id="btn-forgot">Forgot password?</a></div>
           </div>
 
           <button class="btn-submit" type="button" id="btn-signin-submit">Sign In</button>
@@ -268,20 +269,16 @@
           </p>
         </div>
 
-      </div><!-- /form-shell -->
-    </div><!-- /panel-right -->
-  </div><!-- /page -->
-
-  <div id="toast"></div>
+      </div>
+    </div>
+  </div>
 
   <script>
     if (window.location.hash === '#signin') {
       switchTab('signin');
     }
 
-    /* ────────────────────────────────────────────
-       TAB SWITCHING
-    ──────────────────────────────────────────── */
+    // ====== TAB SWITCHING
     function switchTab(tab) {
       const isSignup = tab === 'signup';
 
@@ -290,15 +287,13 @@
       document.getElementById('view-signup').classList.toggle('active', isSignup);
       document.getElementById('view-signin').classList.toggle('active', !isSignup);
 
-      // Animate left panel dots
       document.querySelectorAll('.dot').forEach((d, i) => {
         d.classList.toggle('active', i === (isSignup ? 0 : 1));
       });
     }
 
-    /* ────────────────────────────────────────────
-       EYE TOGGLE
-    ──────────────────────────────────────────── */
+
+    // ====== EYE TOGGLE
     function toggleEye(btn, inputId) {
       const input = document.getElementById(inputId);
       const isText = input.type === 'text';

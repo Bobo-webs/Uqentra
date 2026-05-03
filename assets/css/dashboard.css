@@ -247,7 +247,7 @@ body {
 }
 
 .logo-mark img {
-    margin-bottom: 11px;
+    margin-bottom: 14px;
     width: 30px;
     height: 30px;
 }
@@ -265,6 +265,7 @@ body {
     font-size: 12px;
     color: var(--primary-color);
     font-weight: 600;
+    margin-left: -1.8rem;
 }
 
 .nav {
@@ -582,7 +583,7 @@ body {
 
 .hero .title {
     font-size: 20px;
-    color: var(--primary-color);
+    color: var(--nav-color);
     font-weight: 700;
 }
 

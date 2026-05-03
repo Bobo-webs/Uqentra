@@ -178,9 +178,10 @@
  }
 
  .brand {
-   display: flex;
+   display: inline-flex;
    align-items: center;
    margin-bottom: 2.5rem;
+   text-decoration: none;
  }
 
  .brand-logo {

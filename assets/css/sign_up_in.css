@@ -21,6 +21,36 @@
    --trans: .3s cubic-bezier(.4, 0, .2, 1);
  }
 
+ /* ======= REMOVE LIGHT BLUE HIGHLIGHTS ONCLICK ======== */
+ * {
+   outline: none;
+   -webkit-tap-highlight-color: transparent;
+   scroll-behavior: smooth;
+ }
+
+ a,
+ img,
+ button,
+ input {
+   outline: none;
+   -webkit-tap-highlight-color: transparent;
+ }
+
+ a,
+ img,
+ button,
+ input {
+   outline: none !important;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+   /* Safari */
+   -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+   /* Firefox */
+   -ms-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+   /* Internet Explorer/Edge */
+   tap-highlight-color: rgba(0, 0, 0, 0) !important;
+   /* Standard */
+ }
+
  html,
  body {
    height: 100%;

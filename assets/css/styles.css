@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+*,
+::after,
+::before {
+    box-sizing: border-box
+}
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -26,16 +32,40 @@
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
 }
 
-*,
-::after,
-::before {
-    box-sizing: border-box
-}
-
 @media (prefers-reduced-motion:no-preference) {
     :root {
         scroll-behavior: smooth
     }
+}
+
+/* ======= REMOVE LIGHT BLUE HIGHLIGHTS ONCLICK ======== */
+* {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+a,
+img,
+button,
+input {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a,
+img,
+button,
+input {
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    /* Safari */
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    /* Firefox */
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    /* Internet Explorer/Edge */
+    tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    /* Standard */
 }
 
 body {

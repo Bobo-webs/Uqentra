@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Crypto Market - Uqentra</title>
+  <title>Commodities Market - Uqentra</title>
 
   <!-- ======== Styling ======= -->
   <link rel="icon" href="./assets/images/logo.png" />
@@ -18,6 +18,7 @@
   <script src="/assets/js/toast.js"></script>
   <script type="module" src="/assets/js/firebase-init.js"></script>
   <script type="module" src="/assets/js/dashboard.js"></script>
+  
   <script type="module" src="/assets/js/order.js"></script>
   <script src="/assets/js/contact-modal.js"></script>
 
@@ -85,7 +86,7 @@
 
       <nav class="nav">
         <div class="section-title">Markets</div>
-        <a href="#" class="active">
+        <a href="dashboard-crypto.html">
           <span class="icon"><i class="fa-brands fa-bitcoin"></i></span>
           <span>Crypto</span>
           <!-- <span class="badge">5</span> -->
@@ -106,7 +107,7 @@
           <span>Forex</span>
         </a>
 
-        <a href="commodities.html">
+        <a href="#" class="active">
           <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
           <span>Commodities</span>
         </a>
@@ -198,11 +199,11 @@
           </div>
         </div>
         <div class="illustration">
-          <img src="/assets/images/crypto-trader.png" alt="">
+          <img src="/assets/images/commodities-trader.png" alt="">
         </div>
       </section>
 
-      <!-- Crypto Container: has NO external margin/padding so safe to drop into templates -->
+      <!-- Commodities Container -->
       <div class="cards">
         <div style="padding-top: 0px !important;" class="card">
           <div class="searchBox">
@@ -247,7 +248,7 @@
                   </select>
                   <input id="tx-amount" class="tx-input" placeholder="Minimum of $20" style="flex:1" />
                 </div>
-                <input id="tx-market" value="crypto" disabled style="display: none;" />
+                <input id="tx-market" value="commodities" disabled style="display: none;" />
 
                 <div class="tx-available" id="tx-balance">Available: <span>XXXX</span> USD</div>
 
@@ -300,7 +301,7 @@
 
   <!-- ------- Live Data ------- -->
   <script src="https://s3.tradingview.com/tv.js"></script>
-  <script src="/assets/js/crypto.js"></script>
+  <script src="/assets/js/commodities.js"></script>
   <script>
     (function () {
       const menuBtn = document.getElementById('menuToggle');
@@ -360,14 +361,14 @@
         if (!snapshot.exists()) return;
 
         const data = snapshot.val();
-        const cryptoSignal =
-          (data.cryptoSignal && String(data.cryptoSignal).trim()) ||
-          "No Available Crypto Signal";
+        const commoditiesSignal =
+          (data.commoditiesSignal && String(data.commoditiesSignal).trim()) ||
+          "No Available Commodities Signal";
 
         // UPDATE SIGNAL
         const userSignal = document.querySelector(".hero-first .sub");
         if (userSignal) {
-          userSignal.textContent = cryptoSignal;
+          userSignal.textContent = commoditiesSignal;
         }
 
       } catch (error) {

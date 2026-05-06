@@ -10,11 +10,11 @@
     content="Founded to provide a secure, user-friendly, and diversified trading ecosystem for individuals and institutions" />
   <meta property="og:image" content="https://uqentra.vercel.app/assets/images/logo-icon.png" />
   <meta property="og:url" content="https://uqentra.vercel.app" />
-  <title>Contact Us - Uqentra</title>
+  <title>Forex - Uqentra</title>
 
   <!-- Links -->
   <link rel="icon" href="./assets/images/logo.png" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
   <link href="//fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet" />
 
   <!-- Template CSS -->
@@ -23,8 +23,6 @@
   <!-- ===== Script ===== -->
   <script src="/assets/js/network-state.js"></script>
   <script src="/assets/js/toast.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="/assets/js/contact.js"></script>
 </head>
 
 <body>
@@ -55,7 +53,7 @@
               <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item tradable-dropdown">
-              <a class="nav-link" href="#" id="marketsDropdown">
+              <a class="nav-link active" href="#" id="marketsDropdown">
                 Markets
                 <i class="fa fa-chevron-down ms-2 dropdown-arrow"></i>
               </a>
@@ -68,7 +66,7 @@
                     <a href="crypto-mkt.html">Crypto</a>
                     <a href="stock-mkt.html">Stocks</a>
                     <a href="index-mkt.html">Indices</a>
-                    <a href="forex-mkt.html">Forex</a>
+                    <a class="active" href="#">Forex</a>
                     <a href="commodities-mkt.html">Commodities</a>
                   </div>
 
@@ -85,7 +83,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="policies.html">Usage Policy</a>
@@ -109,12 +107,13 @@
       <div class="container py-5">
         <div class="w3breadcrumb-gids text-center py-sm-5 py-4">
           <div class="w3breadcrumb-info">
-            <h2 class="w3ltop-title">Contact Us</h2>
+            <h2 class="w3ltop-title">Forex Trading</h2>
           </div>
           <ul class="breadcrumbs-custom-path">
             <li><a href="index.html">Home</a></li>
             <li class="active">
-              <span class="fas fa-arrow-right mx-2"></span> Contact
+              <span class="fas fa-arrow-right mx-2"></span> Markets
+              <span class="fas fa-arrow-right mx-2"></span> Forex
             </li>
           </ul>
         </div>
@@ -122,96 +121,153 @@
     </div>
   </section>
 
-  <!--/contact-form-->
-  <section class="w3l-contact-main py-5" id="contact">
-    <div class="container py-lg-5 py-md-3">
-      <div class="w3header-section text-center mb-md-5 mb-4">
-        <h6 class="title-subhny">Contact Info</h6>
-        <h3 class="title-w3l mb-5">
-          Get in touch with us for any inquiries or support
-        </h3>
+  <!-- features-section -->
+  <section class="py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
+          <h3 class="title-w3l fw-semibold mb-3">Forex Trading Explained</h3>
+          <hr class="mx-auto mb-4 topic-liner">
+
+          <p class="text-start">
+            The Foreign Exchange market remains the bedrock of global finance, offering unparalleled liquidity and a
+            dynamic alternative to centralized assets. Through Forex trading, investors can move beyond simple currency
+            exchange to gain broad macroeconomic exposure, using price speculation and strategic hedging to build
+            resilient, diversified portfolios.
+          </p>
+          <br>
+          <p class="text-start">
+            Driven by geopolitical shifts and global economic trends, the Forex market offers a high-volume landscape
+            for everything from majors like EUR/USD and GBP/USD to high-yield emerging market pairs. With deep liquidity
+            and flexible leverage, the market allows traders to pivot instantly between aggressive short-term scalping
+            and steady long-term carry trades. It’s a versatile ecosystem where global central bank policy meets
+            real-time opportunity, fitting any sophisticated strategy.
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="w3l-contact-info">
-        <div class="row justify-content-center g-4 contact-infos">
+  <!--/markets-table-->
+  <section>
+    <h3 class="text-center mb-4 mt-4">Some Available Forex Markets</h3>
+    <div class="container">
+      <!-- Responsive 3-Column Table -->
+      <div class="responsive-table mb-4 mt-4">
+        <table>
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Product</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GBP/USD</td>
+              <td>British Pound / US Dollar</td>
+            </tr>
+            <tr>
+              <td>EUR/USD</td>
+              <td>Euro / US Dollar</td>
+            </tr>
+            <tr>
+              <td>GBP/NZD</td>
+              <td>British Pound / New Zealand Dollar</td>
+            </tr>
+            <tr>
+              <td>EUR/AUD</td>
+              <td>Euro / Australian Dollar</td>
+            </tr>
+            <tr>
+              <td>GBP/CHF</td>
+              <td>British Pound / Swiss Franc</td>
+            </tr>
+            <tr>
+              <td>USD/CAD</td>
+              <td>US Dollar / Canadian Dollar</td>
+            </tr>
+            <tr>
+              <td>AUD/NZD</td>
+              <td>Australian Dollar / New Zealand Dollar</td>
+            </tr>
 
-          <div class="col-12 col-sm-5">
-            <div
-              class="single-contact-infos h-100 d-flex flex-column align-items-center text-center p-4 border rounded-3">
-              <div class="icon-box mb-3">
-                <span>📍</span>
-              </div>
-              <h3 class="mb-2">Address</h3>
-              <p class="mb-0">525 Uni Ave, Palo Alto, CA 94301</p>
-            </div>
-          </div>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-          <div class="col-12 col-sm-5">
-            <div
-              class="single-contact-infos h-100 d-flex flex-column align-items-center text-center p-4 border rounded-3">
-              <div class="icon-box mb-3">
-                <span class="fas">✉️</span>
-              </div>
-              <h3 class="mb-2">Email</h3>
-              <p class="mb-0">
-                <a href="mailto:uqentra@gmail.com">uqentra@gmail.com</a>
-              </p>
-            </div>
-          </div>
+  <!-- features-section -->
+  <section class="py-5" id="features">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
+
+          <h3 class="fw-semibold mb-3">Why Trade Forex with Uqentra?</h3>
+          <p class="text-start">
+            Navigate the global currency markets through Uqentra’s secure and intuitive interface. Our seamless
+            MetaTrader 4 connectivity ensures you maintain full oversight of your FX positions across any device. For a
+            competitive advantage, utilize algorithmic trading to execute your models around the clock, capturing
+            pivotal price shifts in the foreign exchange landscape without needing to be glued to a screen.
+          </p>
 
         </div>
       </div>
     </div>
   </section>
 
-  <!--/contact-map-->
-  <section class="w3l-contact-main" id="contact" style="margin: 0 2rem;">
-    <div class="map pt-lg-3">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101391.36851054354!2d-122.21775236659983!3d37.42575773345263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb07b9dba1c39%3A0xe1ff55235f576cf!2sPalo%20Alto%2C%20CA%2C%20USA!5e0!3m2!1sen!2sng!4v1777713181076!5m2!1sen!2sng"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
-
-  <!--/contact-form-->
-  <section class="w3l-contact-main" id="contact">
-    <div class="contact-infhny py-5">
-      <div class="container py-lg-5">
-        <div class="top-map">
-          <div class="map-content-9">
-            <form id="contactForm" method="POST">
-              <div class="form-top1">
-                <div class="w3header-section text-center">
-                  <h6 class="title-subhny">Get In Touch</h6>
-                  <h3 class="title-w3l mb-0">
-                    Fill the form and send your query
-                  </h3>
-                  <p class="mb-lg-5 mb-4 text-center">
-                    We have made it easy for clients to reach us and get their
-                    solutions weaved
-                  </p>
-                </div>
-
-                <div class="form-top">
-                  <div class="form-top-left">
-                    <input type="text" name="name" id="name" placeholder="Your Name*" required="" />
-                    <input type="number" name="phone" id="phone" placeholder="Phone number" />
-                    <input type="email" name="email" id="email" placeholder="Your email address*" required="" />
-                    <input type="text" name="subject" id="subject" placeholder="Subject*" required="" />
-                  </div>
-                  <div class="form-top-righ">
-                    <textarea name="message" id="message" placeholder="Your message*" required=""></textarea>
-                  </div>
-                </div>
-                <div class="text-lg-right text-center">
-                  <button type="submit" class="btn btn-style btn-primary">
-                    Submit Now <i class="fas fa-paper-plane ms-2"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
+  <!--/registration-step-section-->
+  <section class="w3l-services-page w3l-bg-grey py-5" id="work">
+    <div class="container py-md-5 py-2">
+      <div class="text-center">
+        <h6 class="title-subhny">Get Started</h6>
+        <h3 class="title-w3l">How To Trade With Uqentra</h3>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
+          <div class="grids-1 box-wrap">
+            <div class="icon">
+              <i class="fa-solid fa-1"></i>
+            </div>
+            <div class="icon-info text-left">
+              <h4>
+                <a href="sign_up_in.html" class="title-head mt-0">Open your account</a>
+              </h4>
+              <p class="text-para">
+                Complete your registration to activate trading privileges
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
+          <div class="grids-1 box-wrap">
+            <div class="icon">
+              <i class="fa-solid fa-2"></i>
+            </div>
+            <div class="icon-info text-left">
+              <h4>
+                <a href="deposit.html" class="title-head mt-0">
+                  Fund your account</a>
+              </h4>
+              <p class="text-para">
+                Deposit capital to enable participation in the markets
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-lg-5 mt-4">
+          <div class="grids-1 box-wrap">
+            <div class="icon">
+              <i class="fa-solid fa-3"></i>
+            </div>
+            <div class="icon-info text-left">
+              <h4>
+                <a href="forex.html" class="title-head mt-0">Start trading</a>
+              </h4>
+              <p class="text-para">
+                Access the markets to execute trades with precision
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     onAuthStateChanged(auth, async (user) => {
         if (!user) {
-            window.location.href = "sign_up_in.html#signin";
+            window.location.href = "account.html#signin";
             return;
         }
 
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Boot out immediately if not "user"
             showToast("Access denied", "error");
             await signOut(auth);
-            window.location.href = "sign_up_in.html#signin";
+            window.location.href = "account.html#signin";
             return;
         }
 
@@ -135,7 +135,7 @@ confirmYes?.addEventListener("click", () => {
     signOut(auth)
         .then(() => {
             hidePopup();
-            window.location.href = "sign_up_in.html#signin";
+            window.location.href = "account.html#signin";
         })
         .catch((err) => {
             console.error("Error signing out:", err);

@@ -1,4 +1,4 @@
-//  SIGN_UP_IN.JS
+//  ACCOUNT.JS
 
 import { auth, db } from "/assets/js/firebase-init.js";
 

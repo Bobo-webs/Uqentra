@@ -584,7 +584,7 @@ body {
     font-weight: 700;
 }
 
-.hero .sub {
+.hero .sub, .hero-greeting .sub {
     color: var(--font-color);
     font-weight: 500;
     animation: blinkGreen 0.7s infinite alternate;
@@ -2013,7 +2013,7 @@ svg rect {
 }
 
 .balance-amount {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
     margin: 12px 0;
     letter-spacing: -0.5px;
@@ -2073,7 +2073,7 @@ svg rect {
     }
 
     .balance-amount {
-        font-size: 32px;
+        font-size: 28px;
     }
 }
 
@@ -3017,6 +3017,93 @@ input:checked+.slider:before {
 
 .sub-confirm-btn:hover {
     background: var(--bs-dark-green);
+}
+
+
+/* ======== DASHBOARD-CRYPTO HERO ========= */
+.hero-greeting {
+    margin-top: 18px;
+    margin-left: 10px;
+}
+
+.hero-greeting .title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 4px;
+}
+
+/* ======== BALANCE CARD ========= */
+.balance-card {
+    background: var(--bg-grey);
+    border: 1px solid var(--border-color-light);
+    border-radius: 16px;
+    padding: 22px 24px;
+    width: 100%;
+    margin-bottom: 35px !important;
+}
+
+.balance-card .balance-header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    align-items: center;
+}
+
+.balance-card .balance-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    color: var(--bs-white);
+    text-transform: uppercase;
+}
+
+.balance-card .balance-title sub {
+    font-size: 11px;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.balance-card .eye-toggle {
+    background: none;
+    border: none;
+    color: var(--bs-white);
+    font-size: 15px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: color 0.2s ease;
+}
+
+.balance-card .eye-toggle:hover {
+    color: var(--heading-color);
+}
+
+.balance-card .balance-amount {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--heading-color);
+    letter-spacing: -0.5px;
+    margin: 10px 0 20px;
+}
+
+.balance-card .balance-amount.hidden-balance {
+    letter-spacing: 4px;
+}
+
+.balance-card .hero-btns {
+    margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+    .balance-card {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .balance-card .balance-amount {
+        font-size: 28px;
+    }
 }
 
 

@@ -188,21 +188,27 @@
       </div>
 
 
-      <section class="hero">
-        <div class="hero-first">
-          <div id="userTitle" class="title">Hello, xxx! 👋</div>
-          <div class="sub">xxxx</div>
-          <div class="hero-btns">
-            <a class="deposit-btn" href="deposit.html">Deposit<i class="fa-regular fa-circle-down"></i></a>
-            <a class="trade-btn" href="#txWidget">Trade<i class="fa-solid fa-arrows-rotate"></i></a>
-          </div>
+      <div class="hero-greeting">
+        <div id="userTitle" class="title">Hello, xxx! 👋</div>
+        <div class="sub">xxxx</div>
+      </div>
+
+      <section class="balance-card">
+        <div class="balance-header">
+          <div class="balance-title">TOTAL BALANCE <sub>/ USD</sub></div>
+          <button class="eye-toggle" id="toggleBtn"><i class="fa-solid fa-eye"></i></button>
         </div>
-        <div class="illustration">
-          <img src="/assets/images/crypto-trader.png" alt="">
+
+        <div class="balance-amount" id="totalBalance">-</div>
+        <div id="balanceHidden" class="balance-amount hidden-balance">****</div>
+
+        <div class="hero-btns">
+          <a class="deposit-btn" href="deposit.html">Deposit<i class="fa-regular fa-circle-down"></i></a>
+          <a class="trade-btn" href="#txWidget">Trade<i class="fa-solid fa-arrows-rotate"></i></a>
         </div>
       </section>
 
-      <!-- Crypto Container: has NO external margin/padding so safe to drop into templates -->
+      <!-- Crypto Container -->
       <div class="cards">
         <div style="padding-top: 0px !important;" class="card">
           <div class="searchBox">
@@ -365,7 +371,7 @@
           "No Available Crypto Signal";
 
         // UPDATE SIGNAL
-        const userSignal = document.querySelector(".hero-first .sub");
+        const userSignal = document.querySelector(".hero-greeting .sub");
         if (userSignal) {
           userSignal.textContent = cryptoSignal;
         }
@@ -382,6 +388,34 @@
       } else {
         console.warn("No user logged in.");
       }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('toggleBtn');
+      const balanceVisible = document.getElementById('totalBalance');
+      const balanceHidden = document.getElementById('balanceHidden');
+
+      let isHidden = localStorage.getItem('balanceHidden') === 'true';
+
+      function applyState() {
+        if (isHidden) {
+          balanceVisible.style.display = 'none';
+          balanceHidden.style.display = 'block';
+          btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+        } else {
+          balanceVisible.style.display = 'block';
+          balanceHidden.style.display = 'none';
+          btn.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        }
+      }
+
+      applyState();
+
+      btn.addEventListener('click', () => {
+        isHidden = !isHidden;
+        localStorage.setItem('balanceHidden', isHidden);
+        applyState();
+      });
     });
   </script>
 
